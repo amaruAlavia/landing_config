@@ -1,0 +1,3575 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servicios Mineros | Soluciones para la Gran Minería</title>
+  <meta name="description" content="Sitio web corporativo de Servicios Mineros. Servicios especializados para la gran minería e industria en Chile. Cobertura en faena y cumplimiento HSEC.">
+  <meta name="keywords" content="Servicios Mineros, servicios mineros, proveedores mineria chile, contratistas faena, SICEP, HSEC">
+  
+  <!-- Tipografía Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root, .live-landing-content {
+      --lp-primary: #b45309;
+      --lp-medium: #d97706;
+      --lp-dark: #78350f;
+      --lp-accent: #f59e0b;
+      --lp-accent-dark: #d97706;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #080d19;
+      color: #1e293b;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Contenedor idéntico al visor de 1160px centrado */
+    .landing-site-wrapper {
+      width: 100%;
+      max-width: 1160px;
+      margin: 0 auto;
+      background: #ffffff;
+      box-shadow: 0 10px 50px rgba(0, 0, 0, 0.45);
+      position: relative;
+      min-height: 100vh;
+    }
+
+    .live-landing-content {
+      width: 100%;
+      position: relative;
+      background: #ffffff;
+    }
+
+    /* =================================================== */
+    /* ESTILOS 100% IDÉNTICOS DE LA PREVISUALIZACIÓN       */
+    /* =================================================== */
+    /* SIMULATED MINING LANDING PAGE SECTIONS              */
+    /* =================================================== */
+    .live-landing-content {
+      --lp-primary: #0b2545;
+      --lp-medium: #134074;
+      --lp-dark: #07172c;
+      --lp-accent: #f39c12;
+      --lp-accent-dark: #d97706;
+      background: #ffffff;
+      color: #1e293b;
+      font-family: 'Inter', sans-serif;
+      position: relative;
+      transition: background-color 0.3s ease;
+    }
+
+    /* Section Wrapper with Tag Badge */
+    .sim-section {
+      position: relative;
+      transition: all 0.25s ease;
+      display: block;
+    }
+
+    .sim-section.is-hidden {
+      display: none !important;
+    }
+
+    .sim-section:hover .section-tag-indicator {
+      opacity: 1;
+    }
+
+    .section-tag-indicator {
+      position: absolute;
+      top: 8px;
+      right: 12px;
+      background: rgba(11, 37, 69, 0.9);
+      backdrop-filter: blur(4px);
+      color: #fbbf24;
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+      z-index: 20;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    /* 1. TOP BAR */
+    .sim-topbar {
+      background: var(--lp-dark);
+      color: #94a3b8;
+      font-size: 0.73rem;
+      padding: 8px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      transition: background 0.3s ease;
+    }
+
+    .sim-topbar .left-info {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .sim-topbar .badge-chile {
+      background: rgba(255,255,255,0.12);
+      color: #fff;
+      padding: 1px 6px;
+      border-radius: 3px;
+      font-weight: 600;
+    }
+
+    .sim-topbar .right-info {
+      display: flex;
+      gap: 14px;
+    }
+
+    .sim-topbar a {
+      color: #cbd5e1;
+      text-decoration: none;
+    }
+
+    /* 2. NAVBAR */
+    .sim-navbar {
+      background: #ffffff;
+      padding: 14px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #f1f5f9;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+      position: sticky;
+      top: 0;
+      z-index: 15;
+    }
+
+    .sim-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .sim-logo-icon {
+      width: 34px;
+      height: 34px;
+      background: linear-gradient(135deg, var(--lp-primary), var(--lp-medium));
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--lp-accent);
+      font-size: 1.15rem;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .sim-logo-text {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: 1.15rem;
+      color: var(--lp-primary);
+      transition: color 0.3s ease;
+    }
+
+    .sim-nav-menu {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+
+    .sim-nav-menu li a {
+      color: #475569;
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .sim-nav-menu li a:hover {
+      color: var(--lp-primary);
+    }
+
+    .sim-nav-cta {
+      background: var(--lp-primary);
+      color: #fff;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      transition: background 0.3s ease;
+    }
+
+    .sim-mobile-burger {
+      display: none;
+      font-size: 1.3rem;
+      cursor: pointer;
+      color: var(--lp-primary);
+    }
+
+    /* 3. HERO SECTION */
+    .sim-hero {
+      background: radial-gradient(circle at top right, var(--lp-medium) 0%, var(--lp-primary) 60%, var(--lp-dark) 100%);
+      color: #ffffff;
+      padding: 50px 32px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 30px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.35s ease;
+    }
+
+    .sim-hero::after {
+      content: "";
+      position: absolute;
+      bottom: -40px;
+      right: -40px;
+      width: 250px;
+      height: 250px;
+      background: radial-gradient(circle, var(--lp-accent) 0%, transparent 70%);
+      opacity: 0.2;
+      pointer-events: none;
+    }
+
+    .sim-hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      color: #ffffff;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .sim-hero h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.1rem;
+      font-weight: 800;
+      line-height: 1.18;
+      margin-bottom: 14px;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+    }
+
+    .sim-hero h2 span {
+      background: linear-gradient(135deg, #ffffff, var(--lp-accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .sim-hero p {
+      font-size: 0.88rem;
+      color: #cbd5e1;
+      line-height: 1.5;
+      margin-bottom: 22px;
+    }
+
+    .sim-hero-actions {
+      display: flex;
+      gap: 12px;
+    }
+
+    .sim-btn-hero-primary {
+      background: linear-gradient(135deg, var(--lp-accent), var(--lp-accent-dark));
+      color: #07172c;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+      transition: filter 0.2s;
+    }
+
+    .sim-btn-hero-primary:hover {
+      filter: brightness(1.1);
+    }
+
+    .sim-btn-hero-secondary {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: #ffffff;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .sim-hero-mock {
+      background: #1e293b;
+      border: 2px solid rgba(255,255,255,0.15);
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    }
+
+    .sim-mock-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .sim-mock-chip {
+      background: var(--lp-accent);
+      color: #07172c;
+      font-size: 0.65rem;
+      font-weight: 800;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    .sim-mock-body {
+      background: #0f172a;
+      border-radius: 8px;
+      padding: 12px;
+      color: #94a3b8;
+      font-size: 0.72rem;
+    }
+
+    .sim-mock-mail {
+      background: #1e293b;
+      padding: 6px 8px;
+      border-radius: 4px;
+      margin-bottom: 6px;
+      display: flex;
+      justify-content: space-between;
+      color: #e2e8f0;
+      font-family: monospace;
+      font-size: 0.72rem;
+    }
+
+    /* 4. PROBLEMA VS SOLUCION */
+    .sim-problem-solution {
+      padding: 44px 32px;
+      background: #f8fafc;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .sim-section-header {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 30px auto;
+    }
+
+    .sim-section-header h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #0b2545;
+      margin-bottom: 8px;
+    }
+
+    .sim-section-header p {
+      font-size: 0.84rem;
+      color: #64748b;
+    }
+
+    .sim-compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .compare-card {
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid;
+    }
+
+    .card-problem {
+      background: #fef2f2;
+      border-color: #fecaca;
+    }
+
+    .card-solution {
+      background: #f0fdf4;
+      border-color: #bbf7d0;
+    }
+
+    .compare-title {
+      font-size: 0.92rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .card-problem .compare-title { color: #b91c1c; }
+    .card-solution .compare-title { color: #15803d; }
+
+    .compare-list {
+      list-style: none;
+      font-size: 0.78rem;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .card-problem .compare-list li { color: #7f1d1d; }
+    .card-solution .compare-list li { color: #14532d; }
+
+    /* 5. SERVICIOS PRINCIPALES */
+    .sim-services {
+      padding: 44px 32px;
+      background: #ffffff;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 16px;
+    }
+
+    .sim-service-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 20px 16px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+      transition: transform 0.2s;
+    }
+
+    .sim-service-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(11,37,69,0.08);
+      border-color: #cbd5e1;
+    }
+
+    .service-icon-box {
+      width: 40px;
+      height: 40px;
+      background: rgba(11, 37, 69, 0.06);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+    }
+
+    .sim-service-card h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #0b2545;
+      margin-bottom: 6px;
+    }
+
+    .sim-service-card p {
+      font-size: 0.76rem;
+      color: #64748b;
+      line-height: 1.4;
+    }
+
+    /* 6. ESTANDARES Y DIFERENCIADORES MINEROS */
+    .sim-mining-standards {
+      padding: 40px 32px;
+      background: linear-gradient(135deg, var(--lp-primary) 0%, var(--lp-medium) 100%);
+      color: #fff;
+      transition: background 0.35s ease;
+    }
+
+    .standards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .standard-item {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 8px;
+      padding: 14px;
+    }
+
+    .standard-item h5 {
+      color: var(--lp-accent);
+      font-size: 0.85rem;
+      margin-bottom: 5px;
+      font-weight: 700;
+    }
+
+    .standard-item p {
+      font-size: 0.73rem;
+      color: #cbd5e1;
+      line-height: 1.35;
+    }
+
+    /* 7. PROCESO DE TRABAJO (4 PASOS) */
+    .sim-process {
+      padding: 44px 32px;
+      background: #f8fafc;
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .step-card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 16px;
+      position: relative;
+    }
+
+    .step-num {
+      width: 26px;
+      height: 26px;
+      background: var(--lp-primary);
+      color: var(--lp-accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.75rem;
+      margin-bottom: 10px;
+      transition: background 0.3s ease;
+    }
+
+    .step-card h5 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--lp-primary);
+      margin-bottom: 4px;
+    }
+
+    .step-card p {
+      font-size: 0.72rem;
+      color: #64748b;
+      line-height: 1.3;
+    }
+
+    /* 8. DEMOS Y PORTAFOLIO */
+    .sim-demos {
+      padding: 44px 32px;
+      background: #ffffff;
+    }
+
+    .demos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .demo-card {
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #f8fafc;
+    }
+
+    .demo-thumb {
+      height: 110px;
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #94a3b8;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .demo-info {
+      padding: 12px;
+    }
+
+    .demo-info h5 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--lp-primary);
+    }
+
+    .demo-info span {
+      font-size: 0.7rem;
+      color: #64748b;
+    }
+
+    /* 9. TABLA DE PLANES */
+    .sim-pricing {
+      padding: 44px 32px;
+      background: #f8fafc;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .price-card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 22px 18px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .price-card.featured {
+      border: 2px solid var(--lp-accent);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .featured-badge {
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--lp-accent);
+      color: #07172c;
+      font-size: 0.65rem;
+      font-weight: 800;
+      padding: 2px 10px;
+      border-radius: 10px;
+      text-transform: uppercase;
+    }
+
+    .price-card h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--lp-primary);
+    }
+
+    .price-amount {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--lp-primary);
+      margin: 8px 0;
+    }
+
+    .price-amount span {
+      font-size: 0.72rem;
+      color: #64748b;
+      font-weight: 400;
+    }
+
+    .price-features {
+      list-style: none;
+      font-size: 0.74rem;
+      color: #475569;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      margin: 14px 0 20px 0;
+      flex-grow: 1;
+    }
+
+    .price-features li {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .price-btn {
+      background: var(--lp-primary);
+      color: #fff;
+      text-align: center;
+      padding: 8px;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .price-card.featured .price-btn {
+      background: var(--lp-accent);
+      color: #07172c;
+      font-weight: 700;
+    }
+
+    /* 10. TESTIMONIOS */
+    .sim-testimonials {
+      padding: 44px 32px;
+      background: #ffffff;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+
+    .testi-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 16px;
+    }
+
+    .testi-quote {
+      font-size: 0.78rem;
+      color: #334155;
+      font-style: italic;
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+
+    .testi-author {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .author-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--lp-primary);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.75rem;
+      transition: background 0.3s ease;
+    }
+
+    .author-info h6 {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--lp-primary);
+    }
+
+    .author-info span {
+      font-size: 0.68rem;
+      color: #64748b;
+    }
+
+    /* 11. FAQ ACORDEON */
+    .sim-faq {
+      padding: 44px 32px;
+      background: #f8fafc;
+    }
+
+    .faq-list {
+      max-width: 700px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .faq-item {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+
+    .faq-item summary {
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--lp-primary);
+      cursor: pointer;
+      outline: none;
+    }
+
+    .faq-item p {
+      font-size: 0.76rem;
+      color: #64748b;
+      margin-top: 8px;
+      line-height: 1.4;
+    }
+
+    /* 12. CONTACTO / FORMULARIO */
+    .sim-contact {
+      padding: 44px 32px;
+      background: #ffffff;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    .contact-box {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 24px;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .form-group-sim {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .form-group-sim label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: #334155;
+    }
+
+    .form-group-sim input, .form-group-sim select {
+      padding: 8px 10px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      background: #fff;
+    }
+
+    .btn-submit-sim {
+      background: var(--lp-primary);
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 6px;
+      transition: background 0.3s ease;
+    }
+
+    /* 13. WHATSAPP FLOTANTE (Fijo y sincronizado con el viewport de la web simulada) */
+    .sim-wa-floating {
+      position: fixed;
+      bottom: 26px;
+      right: 26px;
+      background: #25d366;
+      color: #ffffff;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45), 0 2px 8px rgba(0, 0, 0, 0.25);
+      z-index: 94;
+      cursor: pointer;
+      transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease, opacity 0.25s ease;
+      text-decoration: none;
+      user-select: none;
+    }
+
+    .sim-wa-floating:hover {
+      transform: scale(1.12);
+      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.6), 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .sim-wa-floating:active {
+      transform: scale(0.95);
+    }
+
+    .sim-wa-floating svg {
+      width: 30px;
+      height: 30px;
+      fill: #ffffff;
+      filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+    }
+
+    /* Ondas pulsantes de atención estilo WhatsApp */
+    .sim-wa-floating::before {
+      content: '';
+      position: absolute;
+      top: -4px;
+      left: -4px;
+      right: -4px;
+      bottom: -4px;
+      border-radius: 50%;
+      border: 2px solid #25d366;
+      opacity: 0.8;
+      animation: waPulseRing 2.4s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+      pointer-events: none;
+    }
+
+    @keyframes waPulseRing {
+      0% {
+        transform: scale(0.95);
+        opacity: 0.8;
+      }
+      50% {
+        transform: scale(1.25);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1.25);
+        opacity: 0;
+      }
+    }
+
+    /* 14. BARRA REDES SOCIALES LATERAL (Costado derecho con pestañita) */
+    .sim-social-sidebar {
+      position: fixed;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      z-index: 95;
+      display: flex;
+      align-items: center;
+      transition: opacity 0.25s ease;
+      user-select: none;
+    }
+
+    /* Pestañita para esconder / mostrar */
+    .sim-social-tab {
+      width: 22px;
+      height: 46px;
+      background: #0f172a;
+      color: #cbd5e1;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-right: none;
+      border-radius: 6px 0 0 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: -3px 2px 10px rgba(0, 0, 0, 0.35);
+      transition: all 0.2s ease;
+      padding: 0;
+      outline: none;
+      z-index: 2;
+    }
+
+    .sim-social-tab:hover {
+      background: var(--lp-primary, #0b2545);
+      color: #fbbf24;
+      border-color: rgba(251, 191, 36, 0.4);
+    }
+
+    .sim-tab-arrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Cuando está colapsado, la flechita gira apuntando a la izquierda */
+    .sim-social-sidebar.is-collapsed .sim-tab-arrow {
+      transform: rotate(180deg);
+    }
+
+    /* Contenedor de Botones Cuadrados */
+    .sim-social-buttons {
+      display: flex;
+      flex-direction: column;
+      width: 40px;
+      max-width: 40px;
+      box-shadow: -2px 4px 14px rgba(0, 0, 0, 0.35);
+      border-radius: 6px 0 0 6px;
+      overflow: hidden;
+      transition: max-width 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease, transform 0.3s ease;
+      transform-origin: right center;
+    }
+
+    /* Estado Escondido: solo queda la pestañita visible en el borde */
+    .sim-social-sidebar.is-collapsed .sim-social-buttons {
+      max-width: 0;
+      opacity: 0;
+      transform: scaleX(0);
+      pointer-events: none;
+    }
+
+    /* Botón Cuadrado Individual */
+    .sim-social-square-btn {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+
+    .sim-social-square-btn:hover {
+      filter: brightness(1.2);
+      transform: scale(1.06);
+      z-index: 3;
+    }
+
+    .sim-social-square-btn svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    .btn-social-instagram {
+      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    }
+
+    .btn-social-facebook {
+      background: #1877f2;
+    }
+
+    .btn-social-x {
+      background: #000000;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .btn-social-linkedin {
+      background: #0a66c2;
+    }
+
+    /* Ocultar badge de módulo si está colapsado para máxima limpieza */
+    .sim-social-sidebar.is-collapsed .section-tag-indicator {
+      display: none;
+    }
+
+    /* 14. FOOTER */
+    .sim-footer {
+      background: var(--lp-dark);
+      color: #94a3b8;
+      padding: 24px 32px;
+      font-size: 0.74rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      transition: background 0.3s ease;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 14px;
+    }
+
+    .footer-links a {
+      color: #94a3b8;
+      text-decoration: none;
+    }
+
+    /* =================================================== */
+    /* BOTONES DE CAMBIO DE TEMA (CLARO / OSCURO)          */
+    /* =================================================== */
+    .theme-mode-btn {
+      background: rgba(255, 255, 255, 0.08);
+      color: #cbd5e1;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      transition: all 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .theme-mode-btn:hover {
+      background: rgba(255, 255, 255, 0.16);
+      color: #ffffff;
+      border-color: rgba(255, 255, 255, 0.3);
+      transform: translateY(-1px);
+    }
+
+    .theme-mode-btn.is-dark {
+      background: rgba(245, 158, 11, 0.18);
+      color: #fbbf24;
+      border-color: rgba(245, 158, 11, 0.45);
+      box-shadow: 0 0 12px rgba(245, 158, 11, 0.2);
+    }
+
+    /* Selector de Modo en Panel Lateral */
+    .theme-mode-selector {
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .theme-mode-label {
+      font-size: 0.74rem;
+      font-weight: 600;
+      color: #cbd5e1;
+    }
+
+    .mode-switch-group {
+      display: flex;
+      background: #090e17;
+      padding: 3px;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      gap: 3px;
+    }
+
+    .mode-pill {
+      background: transparent;
+      border: none;
+      color: #94a3b8;
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.2s ease;
+    }
+
+    .mode-pill.active {
+      background: var(--accent-gold);
+      color: #07172c;
+      font-weight: 700;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Píldora en la barra del navegador simulado */
+    .browser-theme-pill {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: #cbd5e1;
+      font-size: 0.68rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.2s ease;
+    }
+
+    .browser-theme-pill:hover {
+      background: rgba(255, 255, 255, 0.18);
+      color: #ffffff;
+    }
+
+    /* =================================================== */
+    /* MODO OSCURO (DARK THEME) EN LANDING SIMULADA        */
+    /* =================================================== */
+    .live-landing-content {
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .live-landing-content.theme-dark {
+      background: #060b14;
+      color: #f1f5f9;
+    }
+
+    .live-landing-content.theme-dark .sim-navbar {
+      background: #09121f;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .live-landing-content.theme-dark .sim-navbar .sim-logo-text {
+      color: #ffffff;
+    }
+
+    .live-landing-content.theme-dark .sim-navbar .sim-nav-menu li a {
+      color: #cbd5e1;
+    }
+
+    .live-landing-content.theme-dark .sim-navbar .sim-nav-menu li a:hover {
+      color: var(--lp-accent);
+    }
+
+    .live-landing-content.theme-dark .sim-navbar .sim-mobile-burger {
+      color: #ffffff;
+    }
+
+    .live-landing-content.theme-dark .sim-problem-solution {
+      background: #080f1d;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .live-landing-content.theme-dark .sim-section-header h3 {
+      color: #ffffff;
+    }
+
+    .live-landing-content.theme-dark .sim-section-header p {
+      color: #94a3b8;
+    }
+
+    .live-landing-content.theme-dark .card-problem {
+      background: rgba(185, 28, 28, 0.14);
+      border-color: rgba(239, 68, 68, 0.3);
+    }
+
+    .live-landing-content.theme-dark .card-problem .compare-title {
+      color: #fca5a5;
+    }
+
+    .live-landing-content.theme-dark .card-problem .compare-list li {
+      color: #fecaca;
+    }
+
+    .live-landing-content.theme-dark .card-solution {
+      background: rgba(21, 128, 61, 0.14);
+      border-color: rgba(34, 197, 94, 0.3);
+    }
+
+    .live-landing-content.theme-dark .card-solution .compare-title {
+      color: #86efac;
+    }
+
+    .live-landing-content.theme-dark .card-solution .compare-list li {
+      color: #bbf7d0;
+    }
+
+    .live-landing-content.theme-dark .sim-services {
+      background: #060b14;
+    }
+
+    .live-landing-content.theme-dark .sim-service-card {
+      background: #0d1728;
+      border-color: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .live-landing-content.theme-dark .sim-service-card:hover {
+      border-color: var(--lp-accent);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+    }
+
+    .live-landing-content.theme-dark .sim-service-card h4 {
+      color: #ffffff;
+    }
+
+    .live-landing-content.theme-dark .sim-service-card p {
+      color: #94a3b8;
+    }
+
+    .live-landing-content.theme-dark .service-icon-box {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .live-landing-content.theme-dark .sim-process {
+      background: #080f1d;
+    }
+
+    .live-landing-content.theme-dark .step-card {
+      background: #0d1728;
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+
+    .live-landing-content.theme-dark .step-card h5 {
+      color: #ffffff;
+    }
+
+    .live-landing-content.theme-dark .step-card p {
+      color: #94a3b8;
+    }
+
+    .live-landing-content.theme-dark .sim-demos {
+      background: #060b14;
+    }
+
+    .live-landing-content.theme-dark .demo-card {
+      background: #0d1728;
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+
+    .live-landing-content.theme-dark .demo-info h5 {
+      color: #ffffff;
+    }
+
+    .live-landing-content.theme-dark .demo-info span {
+      color: #94a3b8;
+    }
+
+    .live-landing-content.theme-dark .sim-pricing {
+      background: #080f1d;
+      border-top-color: rgba(255, 255, 255, 0.08);
+    }
+
+    .live-landing-content.theme-dark .price-card {
+      background: #0d1728;
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+
+    .live-landing-content.theme-dark .price-card h4 {
+      color: #ffffff;
+    }
+
+    .live-landing-content.theme-dark .price-amount {
+      color: #ffffff;
+    }
+
+    .live-landing-content.theme-dark .price-amount span {
+      color: #94a3b8;
+    }
+
+    .live-landing-content.theme-dark .price-features {
+      color: #cbd5e1;
+    }
+
+    .live-landing-content.theme-dark .price-card.featured {
+      border-color: var(--lp-accent);
+      background: #111e33;
+    }
+
+    .live-landing-content.theme-dark .sim-testimonials {
+      background: #060b14;
+    }
+
+    .live-landing-content.theme-dark .testi-card {
+      background: #0d1728;
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+
+    .live-landing-content.theme-dark .testi-quote {
+      color: #cbd5e1;
+    }
+
+    .live-landing-content.theme-dark .author-info h6 {
+      color: #ffffff;
+    }
+
+    .live-landing-content.theme-dark .author-info span {
+      color: #94a3b8;
+    }
+
+    .live-landing-content.theme-dark .sim-faq {
+      background: #080f1d;
+    }
+
+    .live-landing-content.theme-dark .faq-item {
+      background: #0d1728;
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+
+    .live-landing-content.theme-dark .faq-item summary {
+      color: #f1f5f9;
+    }
+
+    .live-landing-content.theme-dark .faq-item summary:hover {
+      color: var(--lp-accent);
+    }
+
+    .live-landing-content.theme-dark .faq-item p {
+      color: #94a3b8;
+    }
+
+    .live-landing-content.theme-dark .sim-contact {
+      background: #060b14;
+      border-top-color: rgba(255, 255, 255, 0.08);
+    }
+
+    .live-landing-content.theme-dark .contact-box {
+      background: #0d1728;
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+
+    .live-landing-content.theme-dark .form-group-sim label {
+      color: #cbd5e1;
+    }
+
+    .live-landing-content.theme-dark .form-group-sim input,
+    .live-landing-content.theme-dark .form-group-sim select {
+      background: #080e18;
+      border-color: rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+    }
+
+    /* =================================================== */
+    /* MOTOR DE ANIMACIONES: BÁSICAS Y AVANZADAS           */
+    /* =================================================== */
+
+    /* Controles de Animación en Tarjeta de Módulo */
+    .item-anim-row {
+      margin-top: 8px;
+      padding-top: 6px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+    }
+
+    .anim-label {
+      font-size: 0.68rem;
+      color: #94a3b8;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .anim-segmented-group {
+      display: flex;
+      background: #090e17;
+      padding: 2px;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      gap: 2px;
+    }
+
+    .anim-btn {
+      background: transparent;
+      border: none;
+      color: #64748b;
+      font-size: 0.65rem;
+      font-weight: 600;
+      padding: 2px 7px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      line-height: 1.2;
+    }
+
+    .anim-btn:hover {
+      color: #cbd5e1;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .anim-btn.active[data-anim="none"] {
+      background: #334155;
+      color: #f1f5f9;
+      font-weight: 700;
+    }
+
+    .anim-btn.active[data-anim="basic"] {
+      background: #0284c7;
+      color: #ffffff;
+      font-weight: 700;
+      box-shadow: 0 1px 4px rgba(2, 132, 199, 0.4);
+    }
+
+    .anim-btn.active[data-anim="advanced"] {
+      background: linear-gradient(135deg, #d97706, #ea580c);
+      color: #ffffff;
+      font-weight: 700;
+      box-shadow: 0 1px 6px rgba(217, 119, 6, 0.4);
+    }
+
+    /* Barra Global de Animaciones */
+    .anim-global-bar {
+      margin-top: 10px;
+      background: #0d1728;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+    }
+
+    .anim-global-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .anim-global-label {
+      font-size: 0.73rem;
+      font-weight: 700;
+      color: #cbd5e1;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .anim-global-pills {
+      display: flex;
+      gap: 6px;
+    }
+
+    .anim-global-btn {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #94a3b8;
+      font-size: 0.68rem;
+      font-weight: 600;
+      padding: 6px 4px;
+      border-radius: 6px;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .anim-global-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+    }
+
+    .anim-global-btn.active[data-set-anim="none"] {
+      background: #334155;
+      color: #ffffff;
+      border-color: #475569;
+      font-weight: 700;
+    }
+
+    .anim-global-btn.active[data-set-anim="basic"] {
+      background: #0284c7;
+      color: #ffffff;
+      border-color: #38bdf8;
+      font-weight: 700;
+      box-shadow: 0 2px 8px rgba(2, 132, 199, 0.4);
+    }
+
+    .anim-global-btn.active[data-set-anim="advanced"] {
+      background: linear-gradient(135deg, #d97706, #ea580c);
+      color: #ffffff;
+      border-color: #f59e0b;
+      font-weight: 700;
+      box-shadow: 0 2px 10px rgba(217, 119, 6, 0.4);
+    }
+
+    /* Botón Replay en Browser Mock Bar */
+    .browser-anim-replay {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: #cbd5e1;
+      font-size: 0.68rem;
+      font-weight: 600;
+      padding: 3px 9px;
+      border-radius: 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.2s ease;
+    }
+
+    .browser-anim-replay:hover {
+      background: rgba(255, 255, 255, 0.18);
+      color: #ffffff;
+      transform: scale(1.03);
+    }
+
+    .browser-anim-replay.is-playing span {
+      display: inline-block;
+      animation: spinReplay 0.6s ease;
+    }
+
+    @keyframes spinReplay {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    /* 1. SECCIONES: SIN ANIMACIÓN */
+    .sim-section.anim-none,
+    .sim-section.anim-none * {
+      animation: none !important;
+      transition: none !important;
+    }
+
+    /* 2. SECCIONES: ANIMACIÓN BÁSICA (Fade Up Suave) */
+    .sim-section.anim-basic {
+      animation: simBasicFadeUp 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    @keyframes simBasicFadeUp {
+      0% {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* 3. SECCIONES: ANIMACIÓN AVANZADA */
+    .sim-section.anim-advanced {
+      animation: simAdvancedPop 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    @keyframes simAdvancedPop {
+      0% {
+        opacity: 0;
+        transform: translateY(28px) scale(0.975);
+      }
+      65% {
+        transform: translateY(-3px) scale(1.004);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    /* Stagger de Tarjetas en Animación Avanzada */
+    .sim-section.anim-advanced .sim-service-card,
+    .sim-section.anim-advanced .price-card,
+    .sim-section.anim-advanced .step-card,
+    .sim-section.anim-advanced .standard-item,
+    .sim-section.anim-advanced .testi-card,
+    .sim-section.anim-advanced .demo-card {
+      animation: simChildStagger 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .sim-section.anim-advanced .services-grid > *:nth-child(1),
+    .sim-section.anim-advanced .process-steps > *:nth-child(1),
+    .sim-section.anim-advanced .pricing-grid > *:nth-child(1),
+    .sim-section.anim-advanced .testimonials-grid > *:nth-child(1),
+    .sim-section.anim-advanced .standards-grid > *:nth-child(1),
+    .sim-section.anim-advanced .demos-grid > *:nth-child(1) {
+      animation-delay: 0.08s;
+    }
+
+    .sim-section.anim-advanced .services-grid > *:nth-child(2),
+    .sim-section.anim-advanced .process-steps > *:nth-child(2),
+    .sim-section.anim-advanced .pricing-grid > *:nth-child(2),
+    .sim-section.anim-advanced .testimonials-grid > *:nth-child(2),
+    .sim-section.anim-advanced .standards-grid > *:nth-child(2),
+    .sim-section.anim-advanced .demos-grid > *:nth-child(2) {
+      animation-delay: 0.18s;
+    }
+
+    .sim-section.anim-advanced .services-grid > *:nth-child(3),
+    .sim-section.anim-advanced .process-steps > *:nth-child(3),
+    .sim-section.anim-advanced .pricing-grid > *:nth-child(3),
+    .sim-section.anim-advanced .testimonials-grid > *:nth-child(3),
+    .sim-section.anim-advanced .standards-grid > *:nth-child(3),
+    .sim-section.anim-advanced .demos-grid > *:nth-child(3) {
+      animation-delay: 0.28s;
+    }
+
+    .sim-section.anim-advanced .services-grid > *:nth-child(4),
+    .sim-section.anim-advanced .process-steps > *:nth-child(4),
+    .sim-section.anim-advanced .pricing-grid > *:nth-child(4),
+    .sim-section.anim-advanced .testimonials-grid > *:nth-child(4),
+    .sim-section.anim-advanced .standards-grid > *:nth-child(4),
+    .sim-section.anim-advanced .demos-grid > *:nth-child(4) {
+      animation-delay: 0.38s;
+    }
+
+    @keyframes simChildStagger {
+      0% {
+        opacity: 0;
+        transform: translateY(22px) scale(0.96);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    /* Brillos y Micro-interacciones Avanzadas */
+    .sim-section.anim-advanced .sim-hero-tag {
+      animation: simBadgePulse 2.4s infinite ease-in-out;
+    }
+
+    @keyframes simBadgePulse {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 0 rgba(243, 156, 18, 0); }
+      50% { transform: scale(1.03); box-shadow: 0 0 16px rgba(243, 156, 18, 0.6); }
+    }
+
+    .sim-section.anim-advanced .sim-btn-hero-primary {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sim-section.anim-advanced .sim-btn-hero-primary::after {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%; width: 50%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+      transform: skewX(-20deg);
+      animation: simBtnShine 3.5s infinite;
+    }
+
+    @keyframes simBtnShine {
+      0%, 70% { left: -100%; }
+      100% { left: 200%; }
+    }
+
+    .sim-section.anim-advanced .service-icon-box {
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .sim-section.anim-advanced .sim-service-card:hover .service-icon-box {
+      transform: scale(1.22) rotate(6deg);
+    }
+
+    .sim-section.anim-advanced .step-num {
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .sim-section.anim-advanced .step-card:hover .step-num {
+      transform: scale(1.2) translateY(-2px);
+    }
+
+    .sim-section.anim-advanced .price-card.featured {
+      animation: simCardBorderGlow 3s infinite alternate;
+    }
+
+    @keyframes simCardBorderGlow {
+      0% { box-shadow: 0 8px 20px rgba(0,0,0,0.1), 0 0 6px rgba(243, 156, 18, 0.3); }
+      100% { box-shadow: 0 12px 30px rgba(0,0,0,0.15), 0 0 20px rgba(243, 156, 18, 0.7); }
+    }
+
+    .sim-section.anim-advanced.sim-wa-floating {
+      animation: simWaAttention 2.2s infinite ease-in-out;
+    }
+
+    @keyframes simWaAttention {
+      0%, 100% { transform: scale(1); box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4); }
+      50% { transform: scale(1.08); box-shadow: 0 6px 22px rgba(37, 211, 102, 0.75); }
+    }
+
+    /* =================================================== */
+    /* ADAPTACIÓN RESPONSIVE REAL PARA VIEW-TABLET         */
+    /* =================================================== */
+    .browser-frame.view-tablet .sim-hero {
+      grid-template-columns: 1fr;
+      padding: 36px 24px;
+    }
+    .browser-frame.view-tablet .process-steps {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .browser-frame.view-tablet .sim-topbar {
+      font-size: 0.68rem;
+      padding: 6px 16px;
+    }
+
+    /* =================================================== */
+    /* ADAPTACIÓN RESPONSIVE REAL PARA VIEW-MOBILE         */
+    /* =================================================== */
+    .browser-frame.view-mobile .sim-topbar {
+      flex-direction: column;
+      gap: 4px;
+      padding: 8px 14px;
+      text-align: center;
+      font-size: 0.65rem;
+    }
+    .browser-frame.view-mobile .sim-topbar .left-info,
+    .browser-frame.view-mobile .sim-topbar .right-info {
+      flex-direction: column;
+      gap: 2px;
+      align-items: center;
+    }
+
+    .browser-frame.view-mobile .sim-navbar {
+      padding: 10px 14px;
+    }
+    .browser-frame.view-mobile .sim-nav-menu {
+      display: none; /* En celular el menú colapsa */
+    }
+    .browser-frame.view-mobile .sim-nav-cta {
+      padding: 6px 12px;
+      font-size: 0.72rem;
+    }
+    .browser-frame.view-mobile .sim-mobile-burger {
+      display: block;
+    }
+
+    .browser-frame.view-mobile .sim-hero {
+      grid-template-columns: 1fr;
+      padding: 30px 16px;
+      gap: 20px;
+    }
+    .browser-frame.view-mobile .sim-hero h2 {
+      font-size: 1.45rem;
+    }
+    .browser-frame.view-mobile .sim-hero p {
+      font-size: 0.78rem;
+    }
+    .browser-frame.view-mobile .sim-hero-actions {
+      flex-direction: column;
+      gap: 8px;
+    }
+    .browser-frame.view-mobile .sim-btn-hero-primary,
+    .browser-frame.view-mobile .sim-btn-hero-secondary {
+      text-align: center;
+      width: 100%;
+    }
+
+    .browser-frame.view-mobile .sim-compare-grid {
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+    .browser-frame.view-mobile .sim-problem-solution,
+    .browser-frame.view-mobile .sim-services,
+    .browser-frame.view-mobile .sim-mining-standards,
+    .browser-frame.view-mobile .sim-process,
+    .browser-frame.view-mobile .sim-demos,
+    .browser-frame.view-mobile .sim-pricing,
+    .browser-frame.view-mobile .sim-testimonials,
+    .browser-frame.view-mobile .sim-faq,
+    .browser-frame.view-mobile .sim-contact,
+    .browser-frame.view-mobile .sim-footer {
+      padding: 30px 16px;
+    }
+
+    .browser-frame.view-mobile .sim-section-header h3 {
+      font-size: 1.25rem;
+    }
+
+    .browser-frame.view-mobile .services-grid,
+    .browser-frame.view-mobile .standards-grid,
+    .browser-frame.view-mobile .process-steps,
+    .browser-frame.view-mobile .demos-grid,
+    .browser-frame.view-mobile .pricing-grid,
+    .browser-frame.view-mobile .testimonials-grid {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .browser-frame.view-mobile .footer-content {
+      flex-direction: column;
+      text-align: center;
+      gap: 10px;
+    }
+    .browser-frame.view-mobile .footer-links {
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .browser-frame.view-mobile .sim-wa-floating {
+      width: 44px;
+      height: 44px;
+    }
+
+    .browser-frame.view-mobile .sim-wa-floating svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .browser-frame.view-mobile .sim-social-tab {
+      width: 18px;
+      height: 38px;
+    }
+
+    .browser-frame.view-mobile .sim-tab-arrow svg {
+      width: 12px;
+      height: 12px;
+    }
+
+    .browser-frame.view-mobile .sim-social-buttons {
+      width: 34px;
+      max-width: 34px;
+    }
+
+    .browser-frame.view-mobile .sim-social-sidebar.is-collapsed .sim-social-buttons {
+      max-width: 0;
+    }
+
+    .browser-frame.view-mobile .sim-social-square-btn {
+      width: 34px;
+      height: 34px;
+    }
+
+    .browser-frame.view-mobile .sim-social-square-btn svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* Bottom Home Indicator Bar on Mobile */
+    .mobile-home-bar {
+      display: none;
+      height: 18px;
+      background: #07172c;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 4px;
+    }
+    .home-pill {
+      width: 110px;
+      height: 4px;
+      background: #475569;
+      border-radius: 4px;
+    }
+    .browser-frame.view-mobile .mobile-home-bar {
+      display: flex;
+    }
+
+    /* =================================================== */
+    
+
+    /* =================================================== */
+    /* POSICIONAMIENTO FLOTANTE STANDALONE (ALINEADO)     */
+    /* =================================================== */
+    .sim-wa-floating {
+      position: fixed !important;
+      bottom: 26px !important;
+      right: calc((100vw - min(100vw, 1160px)) / 2 + 24px) !important;
+      z-index: 9999 !important;
+      display: flex !important;
+      opacity: 1 !important;
+      pointer-events: auto !important;
+    }
+
+    @media (max-width: 1220px) {
+      .sim-wa-floating {
+        right: 20px !important;
+      }
+    }
+
+    .sim-social-sidebar {
+      position: fixed !important;
+      top: 50% !important;
+      right: calc((100vw - min(100vw, 1160px)) / 2) !important;
+      transform: translateY(-50%) !important;
+      z-index: 9998 !important;
+      display: flex !important;
+      opacity: 1 !important;
+      pointer-events: auto !important;
+    }
+
+    @media (max-width: 1220px) {
+      .sim-social-sidebar {
+        right: 0 !important;
+      }
+    }
+  </style>
+</head>
+<body class="">
+
+  <div class="landing-site-wrapper">
+    <div class="live-landing-content ">
+
+            <!-- 1. TOPBAR FAENA -->
+            <section class="sim-section sim-topbar" id="preview-topbar">
+              
+              <div class="left-info">
+                <span class="badge-chile">🇨🇱 Chile</span>
+                <span>Cobertura Minera: Antofagasta • Calama • Copiapó • Santiago</span>
+              </div>
+              <div class="right-info">
+                <a href="#">📞 Central: +56 9 8765 4321</a>
+                <a href="#">✉️ contacto@<span class="clientDomainText">serviciosatacama.cl</span></a>
+              </div>
+            </section>
+
+            <!-- 2. NAVBAR -->
+            <header class="sim-section sim-navbar" id="preview-navbar">
+              
+              <div class="sim-logo">
+                <div class="sim-logo-icon">⛏️</div>
+                <div class="sim-logo-text" id="navbarLogoText"><span class="brandNameDisplay">Servicios Mineros Atacama SpA</span></div>
+              </div>
+              <ul class="sim-nav-menu">
+                <li><a href="#preview-hero">Inicio</a></li>
+                <li><a href="#preview-services">Servicios</a></li>
+                <li><a href="#preview-standards">HSEC</a></li>
+                <li><a href="#preview-pricing">Planes</a></li>
+              </ul>
+              <div style="display:flex; align-items:center; gap:10px;">
+                <a href="#preview-contact" class="sim-nav-cta">Cotizar</a>
+                <span class="sim-mobile-burger">☰</span>
+              </div>
+            </header>
+
+            <!-- 3. HERO SECTION -->
+            <section class="sim-section sim-hero" id="preview-hero">
+              
+              <div>
+                <div class="sim-hero-tag">⚡ Presencia Corporativa Minera</div>
+                <h2>Soluciones de Excelencia para la <span>Gran Minería</span></h2>
+                <p>Operamos bajo los más exigentes estándares de seguridad, trazabilidad y cumplimiento en faena. Acreditados para contratos mineros de alta envergadura.</p>
+                <div class="sim-hero-actions">
+                  <a href="#preview-contact" class="sim-btn-hero-primary">Solicitar Cotización</a>
+                  <a href="#" class="sim-btn-hero-secondary">Descargar Dossier</a>
+                </div>
+              </div>
+              <div class="sim-hero-mock">
+                <div class="sim-mock-header">
+                  <span class="sim-mock-chip">SISTEMA ACREDITADO</span>
+                  <span style="font-size:0.75rem; color:#f8fafc; font-weight:600;"><span class="clientDomainText">serviciosatacama.cl</span></span>
+                </div>
+                <div class="sim-mock-body">
+                  <div class="sim-mock-mail">
+                    <span>operaciones@<span class="clientDomainText">serviciosatacama.cl</span></span>
+                    <span style="color:#22c55e;">ACTIVO</span>
+                  </div>
+                  <div class="sim-mock-mail">
+                    <span>gerencia@<span class="clientDomainText">serviciosatacama.cl</span></span>
+                    <span style="color:#22c55e;">ACTIVO</span>
+                  </div>
+                  <div style="margin-top:8px; font-size:0.68rem; color:#94a3b8; line-height:1.4;">
+                    ✓ Acreditación SICEP al día <br>
+                    ✓ Cero accidentes HSEC en faena
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- 4. PROBLEMA VS SOLUCION -->
+            <section class="sim-section sim-problem-solution" id="preview-problem-solution">
+              
+              <div class="sim-section-header">
+                <h3>¿Por qué las mineras exigen estándar corporativo?</h3>
+                <p>La diferencia crítica entre ser descartado en una licitación o calificar como proveedor confiable.</p>
+              </div>
+              <div class="sim-compare-grid">
+                <div class="compare-card card-problem">
+                  <div class="compare-title">❌ Prácticas Informales (Riesgo)</div>
+                  <ul class="compare-list">
+                    <li>Correos con dominio genérico (@gmail.com / @hotmail.com)</li>
+                    <li>Falta de fichas técnicas y certificaciones visibles</li>
+                    <li>Imagen improvisada que genera dudas en comités de compras</li>
+                    <li>Dificultad de contacto directo con jefaturas</li>
+                  </ul>
+                </div>
+                <div class="compare-card card-solution">
+                  <div class="compare-title">✅ Estándar Corporativo Acreditado</div>
+                  <ul class="compare-list">
+                    <li>Correos institucionales encriptados con dominio .CL</li>
+                    <li>Dossier y protocolos HSEC disponibles para descarga</li>
+                    <li>Cumplimiento de estándares corporativos para auditorías</li>
+                    <li>Canales ágiles de cotización y respuesta prioritaria</li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            <!-- 5. SERVICIOS PRINCIPALES -->
+            <section class="sim-section sim-services" id="preview-services">
+              
+              <div class="sim-section-header">
+                <h3>Nuestras Especialidades en Faena</h3>
+                <p>Capacidad operativa y personal calificado disponible en régimen continuo.</p>
+              </div>
+              <div class="services-grid">
+                <div class="sim-service-card">
+                  <div class="service-icon-box">⚙️</div>
+                  <h4>Mantenimiento Mecánico</h4>
+                  <p>Overhaul, reparaciones estructurales y calibración de equipos pesados de extracción.</p>
+                </div>
+                <div class="sim-service-card">
+                  <div class="service-icon-box">🚛</div>
+                  <h4>Logística y Transporte</h4>
+                  <p>Flota monitoreada por GPS para traslado de suministros críticos y personal en altura.</p>
+                </div>
+                <div class="sim-service-card">
+                  <div class="service-icon-box">🧪</div>
+                  <h4>Sondajes y Muestreo</h4>
+                  <p>Ensayos técnicos geotécnicos con entrega rápida de informes de laboratorio en terreno.</p>
+                </div>
+                <div class="sim-service-card">
+                  <div class="service-icon-box">🛡️</div>
+                  <h4>Asistencia y Montaje</h4>
+                  <p>Cuadrillas especializadas con certificaciones de altura y espacios confinados.</p>
+                </div>
+              </div>
+            </section>
+
+            <!-- 6. ESTANDARES Y HSEC -->
+            <section class="sim-section sim-mining-standards" id="preview-standards">
+              
+              <div class="sim-section-header">
+                <h3 style="color:#fff;">Seguridad y Cumplimiento Normativo (HSEC)</h3>
+                <p style="color:#cbd5e1;">Comprometidos con la excelencia operacional y la prevención de riesgos en terreno.</p>
+              </div>
+              <div class="standards-grid">
+                <div class="standard-item">
+                  <h5>📋 Acreditación SICEP / REGIC</h5>
+                  <p>Registro y calificación actualizada para postular a licitaciones mineras de gran envergadura.</p>
+                </div>
+                <div class="standard-item">
+                  <h5>🦺 Cero Daño & Salud Ocupacional</h5>
+                  <p>Protocolos de seguridad estrictos alineados a la normativa SERNAGEOMIN.</p>
+                </div>
+                <div class="standard-item">
+                  <h5>🌱 Sustentabilidad Ambiental</h5>
+                  <p>Manejo responsable de residuos y cumplimiento de planes de compensación en faena.</p>
+                </div>
+              </div>
+            </section>
+
+            <!-- 7. PROCESO DE TRABAJO -->
+            <section class="sim-section sim-process" id="preview-process">
+              
+              <div class="sim-section-header">
+                <h3>Cómo Trabajamos con Nuestros Clientes</h3>
+                <p>Metodología transparente y controlada en cada etapa del servicio.</p>
+              </div>
+              <div class="process-steps">
+                <div class="step-card">
+                  <div class="step-num">1</div>
+                  <h5>Diagnóstico</h5>
+                  <p>Relevamiento de necesidades técnicas y condiciones en terreno.</p>
+                </div>
+                <div class="step-card">
+                  <div class="step-num">2</div>
+                  <h5>Cotización Técnica</h5>
+                  <p>Presupuesto desglosado con plazos y protocolos de entrega.</p>
+                </div>
+                <div class="step-card">
+                  <div class="step-num">3</div>
+                  <h5>Ejecución en Faena</h5>
+                  <p>Despliegue de cuadrilla con control diario de avance.</p>
+                </div>
+                <div class="step-card">
+                  <div class="step-num">4</div>
+                  <h5>Cierre y Garantía</h5>
+                  <p>Entrega de informe final con conformidad del supervisor.</p>
+                </div>
+              </div>
+            </section>
+
+            <!-- 8. DEMOS Y PORTAFOLIO -->
+            <section class="sim-section sim-demos" id="preview-demos">
+              
+              <div class="sim-section-header">
+                <h3>Experiencia y Faenas Atendidas</h3>
+                <p>Presencia activa en los principales distritos mineros del país.</p>
+              </div>
+              <div class="demos-grid">
+                <div class="demo-card">
+                  <div class="demo-thumb">PROYECTO NORTE GRANDE</div>
+                  <div class="demo-info">
+                    <h5>Montaje Estructuras Espesador</h5>
+                    <span>Faena en II Región • 15.000 HH sin incidentes</span>
+                  </div>
+                </div>
+                <div class="demo-card">
+                  <div class="demo-thumb">PROYECTO ATACAMA</div>
+                  <div class="demo-info">
+                    <h5>Mantenimiento Planta Chancado</h5>
+                    <span>Parada de planta ejecutada 4 horas antes del plazo</span>
+                  </div>
+                </div>
+                <div class="demo-card">
+                  <div class="demo-thumb">ZONA CENTRAL</div>
+                  <div class="demo-info">
+                    <h5>Transporte de Cargas Pesadas</h5>
+                    <span>Rutas cordilleranas con escolta y telemetría activa</span>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- 9. PLANES Y PRECIOS -->
+            <section class="sim-section sim-pricing" id="preview-pricing">
+              
+              <div class="sim-section-header">
+                <h3>Paquetes de Servicio Adaptados a tu Escala</h3>
+                <p>Alternativas transparentes para contratistas y proveedores.</p>
+              </div>
+              <div class="pricing-grid">
+                <div class="price-card">
+                  <h4>Plan Inicio Minero</h4>
+                  <div class="price-amount">$190.000 <span>/ único</span></div>
+                  <ul class="price-features">
+                    <li>✓ Landing Page ágil en 5 días</li>
+                    <li>✓ 2 Correos corporativos .CL</li>
+                    <li>✓ Formulario de contacto directo</li>
+                    <li>✓ Configuración en celulares</li>
+                  </ul>
+                  <a href="#preview-contact" class="price-btn">Elegir Plan</a>
+                </div>
+
+                <div class="price-card featured">
+                  <span class="featured-badge">Más Cotizado</span>
+                  <h4>Plan Proveedor Calificado</h4>
+                  <div class="price-amount">$320.000 <span>/ único</span></div>
+                  <ul class="price-features">
+                    <li>✓ Landing Page completa multipropósito</li>
+                    <li>✓ 5 Correos corporativos encriptados</li>
+                    <li>✓ Sección HSEC y Fichas Técnicas</li>
+                    <li>✓ Botón directo WhatsApp y Cotizador</li>
+                    <li>✓ Soporte prioritario de faena</li>
+                  </ul>
+                  <a href="#preview-contact" class="price-btn">Elegir Plan</a>
+                </div>
+
+                <div class="price-card">
+                  <h4>Plan Corporativo</h4>
+                  <div class="price-amount">$550.000 <span>/ único</span></div>
+                  <ul class="price-features">
+                    <li>✓ Sitio Web multi-sección expandible</li>
+                    <li>✓ 10+ Correos institucionales</li>
+                    <li>✓ Catálogo descargable en PDF</li>
+                    <li>✓ Integración CRM / Bases de datos</li>
+                  </ul>
+                  <a href="#preview-contact" class="price-btn">Elegir Plan</a>
+                </div>
+              </div>
+            </section>
+
+            <!-- 10. TESTIMONIOS -->
+            <section class="sim-section sim-testimonials" id="preview-testimonials">
+              
+              <div class="sim-section-header">
+                <h3>Lo que Dicen Quienes Trabajan con Nosotros</h3>
+                <p>Relaciones de largo plazo basadas en cumplimiento y seriedad.</p>
+              </div>
+              <div class="testimonials-grid">
+                <div class="testi-card">
+                  <p class="testi-quote">"Tener presencia web profesional y correos corporativos nos permitió calificar para una licitación clave en Minera Escondida que antes nos rebotaba."</p>
+                  <div class="testi-author">
+                    <div class="author-avatar">RM</div>
+                    <div class="author-info">
+                      <h6>Rodrigo Morales</h6>
+                      <span>Gerente de Operaciones, Sondajes del Norte</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="testi-card">
+                  <p class="testi-quote">"La rapidez de respuesta y la claridad para cotizar nos dieron la confianza que necesitábamos. 100% recomendados en el sector."</p>
+                  <div class="testi-author">
+                    <div class="author-avatar">CP</div>
+                    <div class="author-info">
+                      <h6>Claudia Pizarro</h6>
+                      <span>Jefa de Adquisiciones, Mecánica Integral</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- 11. PREGUNTAS FRECUENTES -->
+            <section class="sim-section sim-faq" id="preview-faq">
+              
+              <div class="sim-section-header">
+                <h3>Preguntas Frecuentes</h3>
+                <p>Respuestas claras a las consultas más habituales de nuestros clientes.</p>
+              </div>
+              <div class="faq-list">
+                <details class="faq-item" open>
+                  <summary>¿Cuánto demora la puesta en marcha de los correos y el sitio?</summary>
+                  <p>Los correos corporativos quedan configurados y operativos en 24 a 48 horas. La landing page completa se entrega lista en un plazo promedio de 5 a 7 días hábiles.</p>
+                </details>
+                <details class="faq-item">
+                  <summary>¿Nos ayudan a configurar los correos en nuestros teléfonos y Outlook?</summary>
+                  <p>Sí, entregamos guías paso a paso y asistencia remota para que todo tu equipo tenga sus cuentas sincronizadas en celulares iPhone/Android y computadores.</p>
+                </details>
+                <details class="faq-item">
+                  <summary>¿Qué ocurre si ya compramos un dominio en NIC Chile (.cl)?</summary>
+                  <p>No hay problema. Vinculamos tu dominio existente a los nuevos servidores sin costos extra ni pérdida de control.</p>
+                </details>
+              </div>
+            </section>
+
+            <!-- 12. CONTACTO -->
+            <section class="sim-section sim-contact" id="preview-contact">
+              
+              <div class="sim-section-header">
+                <h3>Solicitar Cotización Inmediata</h3>
+                <p>Déjanos los requerimientos de tu empresa y te contactaremos en menos de 2 horas hábiles.</p>
+              </div>
+              <div class="contact-box">
+                <form class="contact-form" onsubmit="event.preventDefault(); alert('Demo: Solicitud recibida con éxito.');">
+                  <div class="form-group-sim">
+                    <label>Razón Social / Nombre de Empresa:</label>
+                    <input type="text" placeholder="Ej: Servicios Mineros Copiapó SpA" required>
+                  </div>
+                  <div class="form-group-sim">
+                    <label>RUT de Empresa (Opcional):</label>
+                    <input type="text" placeholder="77.123.456-K">
+                  </div>
+                  <div class="form-group-sim">
+                    <label>Teléfono o WhatsApp de Contacto:</label>
+                    <input type="tel" placeholder="+56 9 1234 5678" required>
+                  </div>
+                  <div class="form-group-sim">
+                    <label>Faena o Región de Operación:</label>
+                    <select>
+                      <option>Región de Antofagasta</option>
+                      <option>Región de Atacama</option>
+                      <option>Región de Tarapacá</option>
+                      <option>Región de Coquimbo</option>
+                      <option>Región Metropolitana</option>
+                      <option>Otra Región</option>
+                    </select>
+                  </div>
+                  <button type="submit" class="btn-submit-sim">Enviar Solicitud de Cotización</button>
+                </form>
+              </div>
+            </section>
+
+            <!-- 13. WHATSAPP FLOTANTE -->
+            <div class="sim-section sim-wa-floating" id="preview-whatsapp" title="Hablar por WhatsApp" onclick="event.preventDefault(); alert('Demo: Abre chat directo de WhatsApp con el número comercial de la empresa');">
+              
+              <svg viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c4.54 0 8.24 3.7 8.24 8.24 0 2.2-.86 4.28-2.42 5.84-1.56 1.56-3.64 2.41-5.84 2.41-1.43 0-2.83-.37-4.06-1.07l-.29-.17-3.12.82.83-3.04-.19-.3A8.17 8.17 0 0 1 3.8 11.91c0-4.54 3.7-8.24 8.25-8.24zm4.56 11.64c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.4-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.12-.14.17-.25.25-.41.08-.17.04-.32-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.77 2.7 4.29 3.79.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.29z"/></svg>
+            </div>
+
+            <!-- 14. BARRA REDES SOCIALES LATERAL (Costado derecho con pestañita) -->
+            <div class="sim-section sim-social-sidebar" id="preview-social" title="Redes Sociales">
+              
+              
+              <!-- Pestañita para esconder / mostrar -->
+              <button type="button" class="sim-social-tab" id="simSocialTab" title="Ocultar redes sociales" aria-label="Ocultar redes sociales">
+                <span class="sim-tab-arrow">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </span>
+              </button>
+
+              <!-- Botones Cuadrados de Redes Sociales -->
+              <div class="sim-social-buttons" id="simSocialButtons">
+                <!-- Instagram -->
+                <a href="#" class="sim-social-square-btn btn-social-instagram" title="Instagram" onclick="event.preventDefault(); alert('Demo: Abre Instagram de la empresa');">
+                  <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+
+                <!-- Facebook -->
+                <a href="#" class="sim-social-square-btn btn-social-facebook" title="Facebook" onclick="event.preventDefault(); alert('Demo: Abre Facebook de la empresa');">
+                  <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </a>
+
+                <!-- X (Twitter) -->
+                <a href="#" class="sim-social-square-btn btn-social-x" title="X (Twitter)" onclick="event.preventDefault(); alert('Demo: Abre perfil en X de la empresa');">
+                  <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+
+                <!-- LinkedIn -->
+                <a href="#" class="sim-social-square-btn btn-social-linkedin" title="LinkedIn" onclick="event.preventDefault(); alert('Demo: Abre LinkedIn de la empresa');">
+                  <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- 14. FOOTER -->
+            <footer class="sim-section sim-footer" id="preview-footer">
+              
+              <div class="footer-content">
+                <div>
+                  <strong><span class="brandNameDisplay">Servicios Mineros Atacama SpA</span></strong><br>
+                  <span>Soluciones Industriales para la Minería Chilena. Todos los derechos reservados.</span>
+                </div>
+                <div class="footer-links">
+                  <a href="#">Políticas de Privacidad</a>
+                  <a href="#">Términos de Servicio</a>
+                  <a href="#">Soporte Técnico</a>
+                </div>
+              </div>
+            </footer>
+
+            <!-- Smartphone Bottom Home Bar (Mobile Only) -->
+            <div class="mobile-home-bar">
+              <div class="home-pill"></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </main>
+
+  </div>
+
+  <!-- Modal Exportar / Resumen para Cliente -->
+  <div class="modal-backdrop" id="summaryModal">
+    <div class="modal-window">
+      <div class="modal-header">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <span style="font-size:1.3rem;">📦</span>
+          <div>
+            <h3>Centro de Exportación & Propuesta</h3>
+            <span style="font-size:0.73rem; color:#94a3b8; display:block;">Propuesta comercial, prompt para IA y descarga de código HTML</span>
+          </div>
+        </div>
+        <button class="modal-close-btn" id="closeModalBtn" title="Cerrar modal">&times;</button>
+      </div>
+
+      <!-- Pestañas de Navegación del Modal -->
+      <div class="modal-tabs-nav">
+        <button type="button" class="modal-tab-btn active" data-tab="description">
+          <span>📋</span> Descripción Actual
+        </button>
+        <button type="button" class="modal-tab-btn" data-tab="prompt">
+          <span>🤖</span> Prompt para IA
+        </button>
+        <button type="button" class="modal-tab-btn" data-tab="html">
+          <span>💾</span> Descargar HTML
+        </button>
+      </div>
+
+      <div class="modal-body">
+        
+        <!-- TAB 1: DESCRIPCIÓN ACTUAL / PROPUESTA COMERCIAL -->
+        <div class="modal-tab-content active" id="tabContentDescription">
+          <p class="tab-explanation">
+            Resumen comercial listo para enviar por WhatsApp o adjuntar a cotizaciones formales para tu cliente:
+          </p>
+          <div class="summary-text-box" id="summaryTextOutput"></div>
+          <div class="modal-actions">
+            <button type="button" class="btn-action-secondary" id="copyTextBtn">📄 Copiar Propuesta</button>
+            <button type="button" class="btn-copy-wa" id="sendWhatsAppBtn">📱 Enviar por WhatsApp</button>
+          </div>
+        </div>
+
+        <!-- TAB 2: PROMPT PARA INTELIGENCIA ARTIFICIAL -->
+        <div class="modal-tab-content" id="tabContentPrompt">
+          <p class="tab-explanation">
+            Copia este prompt maestro estructurado y pégalo en <strong>ChatGPT, Claude, DeepSeek o Gemini</strong> para desarrollar, expandir o redactar contenido especializado con la configuración exacta de esta landing:
+          </p>
+          <div class="summary-text-box prompt-box" id="promptTextOutput"></div>
+          <div class="modal-actions">
+            <button type="button" class="btn-action-primary" id="copyPromptBtn">🤖 Copiar Prompt para IA</button>
+          </div>
+        </div>
+
+        <!-- TAB 3: DESCARGA DE ARCHIVO HTML AUTÓNOMO -->
+        <div class="modal-tab-content" id="tabContentHtml">
+          <div class="html-download-card">
+            <div class="html-card-header">
+              <div class="html-card-icon">🌐</div>
+              <div>
+                <h4 id="downloadFileNameTitle">landing-empresa.html</h4>
+                <p>Archivo web independiente listo para producción con todos los estilos, colores, modo <span id="downloadModeText" style="color:#fbbf24; font-weight:700;">Claro</span> y módulos seleccionados.</p>
+              </div>
+            </div>
+            
+            <div class="html-features-list">
+              <div class="html-feature-pill">✓ Solo módulos activos: <span id="htmlActiveCount" style="color:#fbbf24; font-weight:700;">15</span></div>
+              <div class="html-feature-pill">✓ Paleta inyectada: <span id="htmlThemeName" style="color:#fbbf24; font-weight:700;">Azul Marino</span></div>
+              <div class="html-feature-pill">✓ WhatsApp y Redes persistentes</div>
+              <div class="html-feature-pill">✓ 100% Responsive para móviles y faena</div>
+            </div>
+
+            <div class="modal-actions" style="margin-top:16px; justify-content:center; gap:12px;">
+              <button type="button" class="btn-action-download" id="downloadHtmlBtn">
+                <span>⬇️</span> Descargar Archivo HTML (.html)
+              </button>
+              <button type="button" class="btn-action-secondary" id="copyHtmlCodeBtn">
+                <span>📋</span> Copiar Código HTML
+              </button>
+            </div>
+          </div>
+
+          <div style="margin-top:14px;">
+            <label style="font-size:0.75rem; color:#94a3b8; font-weight:600; margin-bottom:6px; display:block;">Vista previa del código HTML generado:</label>
+            <div class="summary-text-box code-preview-box" id="htmlCodePreview"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Engine -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Elements
+      const checkboxes = document.querySelectorAll('input[data-section]');
+      const sectionsCounter = document.getElementById('sectionsCounter');
+      const selectedCountBadge = document.getElementById('selectedCountBadge');
+      const browserFrame = document.getElementById('browserFrame');
+      const previewCanvasScroll = document.getElementById('previewCanvasScroll');
+      const deviceBtns = document.querySelectorAll('.device-btn');
+      const presetBtns = document.querySelectorAll('.preset-pill');
+      const clientDemoInput = document.getElementById('clientDemoName');
+      const urlPreview = document.getElementById('urlPreview');
+      const brandNameDisplays = document.querySelectorAll('.brandNameDisplay');
+      const clientDomainTexts = document.querySelectorAll('.clientDomainText');
+      const navbarLogoText = document.getElementById('navbarLogoText');
+      const themeSwatchesGrid = document.getElementById('themeSwatchesGrid');
+      const activeThemeLabel = document.getElementById('activeThemeLabel');
+      const landingContent = document.querySelector('.live-landing-content');
+      
+      // Dictionary of sections
+      const sectionInfo = {
+        'topbar': { name: 'Barra Superior (Topbar)', desc: 'Contacto de faena y cobertura nacional' },
+        'navbar': { name: 'Barra de Menú (Navbar)', desc: 'Logo institucional y botón de cotización' },
+        'hero': { name: 'Hero Principal', desc: 'Titular de impacto, valor diferencial y llamada a la acción' },
+        'problem-solution': { name: 'Problema vs Solución', desc: 'Riesgos de correos informales vs acreditación profesional' },
+        'services': { name: 'Especialidades Mineras', desc: 'Catálogo de especialidades en tarjetas' },
+        'standards': { name: 'Estándares HSEC & Minería', desc: 'Sellos de seguridad, certificaciones y SICEP' },
+        'process': { name: 'Proceso de Trabajo (4 Pasos)', desc: 'Explicación del flujo de trabajo y garantías' },
+        'demos': { name: 'Portafolio / Faenas Atendidas', desc: 'Casos de éxito y experiencia demostrable' },
+        'pricing': { name: 'Planes & Precios', desc: 'Tabla con alternativas claras de cotización' },
+        'testimonials': { name: 'Testimonios de Clientes', desc: 'Opiniones y respaldo de contrapartes mineras' },
+        'faq': { name: 'Preguntas Frecuentes (FAQ)', desc: 'Acordeón con resolución de dudas operativas' },
+        'contact': { name: 'Formulario de Cotización', desc: 'Captura de prospectos con datos de empresa y faena' },
+        'whatsapp': { name: 'Botón WhatsApp Flotante', desc: 'Canal de mensajería instantánea directo' },
+        'social': { name: 'Barra Redes Sociales Lateral', desc: 'Botones cuadrados en lateral derecho con pestaña para ocultar (Instagram, Facebook, X, LinkedIn)' },
+        'footer': { name: 'Pie de Página (Footer)', desc: 'Datos legales y copyright de la empresa' }
+      };
+
+      // 12 Colores Básicos y Paletas Profesionales para Minería / B2B
+      const colorThemes = [
+        { id: 'navy', name: 'Azul Marino', primary: '#0b2545', medium: '#134074', dark: '#07172c', accent: '#f39c12', accentDark: '#d97706', previewHex: '#0b2545' },
+        { id: 'copper', name: 'Cobre Chileno', primary: '#c2410c', medium: '#ea580c', dark: '#1c0d06', accent: '#f59e0b', accentDark: '#d97706', previewHex: '#c2410c' },
+        { id: 'gold', name: 'Amarillo Maquinaria', primary: '#d97706', medium: '#f59e0b', dark: '#1e1809', accent: '#facc15', accentDark: '#ca8a04', previewHex: '#eab308' },
+        { id: 'red', name: 'Rojo Industrial', primary: '#b91c1c', medium: '#dc2626', dark: '#1f0a0a', accent: '#fb923c', accentDark: '#ea580c', previewHex: '#b91c1c' },
+        { id: 'green', name: 'Verde Seguridad', primary: '#15803d', medium: '#16a34a', dark: '#081a0e', accent: '#a3e635', accentDark: '#65a30d', previewHex: '#15803d' },
+        { id: 'cyan', name: 'Cian Digital', primary: '#0284c7', medium: '#0ea5e9', dark: '#071824', accent: '#38bdf8', accentDark: '#0284c7', previewHex: '#0284c7' },
+        { id: 'emerald', name: 'Esmeralda Menta', primary: '#0f766e', medium: '#14b8a6', dark: '#061a17', accent: '#2dd4bf', accentDark: '#0d9488', previewHex: '#0f766e' },
+        { id: 'cobalt', name: 'Azul Cobalto', primary: '#1d4ed8', medium: '#3b82f6', dark: '#09132e', accent: '#60a5fa', accentDark: '#2563eb', previewHex: '#1d4ed8' },
+        { id: 'purple', name: 'Morado Innovación', primary: '#6b21a8', medium: '#9333ea', dark: '#180a26', accent: '#c084fc', accentDark: '#9333ea', previewHex: '#7e22ce' },
+        { id: 'graphite', name: 'Grafito Carbón', primary: '#334155', medium: '#475569', dark: '#0f172a', accent: '#f59e0b', accentDark: '#d97706', previewHex: '#334155' },
+        { id: 'bronze', name: 'Bronce Tierra', primary: '#78350f', medium: '#92400e', dark: '#1a0e06', accent: '#fbbf24', accentDark: '#d97706', previewHex: '#78350f' },
+        { id: 'magenta', name: 'Magenta Proceso', primary: '#be185d', medium: '#db2777', dark: '#220814', accent: '#f472b6', accentDark: '#db2777', previewHex: '#be185d' }
+      ];
+
+      let currentTheme = colorThemes[0];
+
+      // Aplicar tema dinámicamente al preview
+      function applyColorTheme(theme) {
+        currentTheme = theme;
+        if (landingContent) {
+          landingContent.style.setProperty('--lp-primary', theme.primary);
+          landingContent.style.setProperty('--lp-medium', theme.medium);
+          landingContent.style.setProperty('--lp-dark', theme.dark);
+          landingContent.style.setProperty('--lp-accent', theme.accent);
+          landingContent.style.setProperty('--lp-accent-dark', theme.accentDark);
+        }
+
+        if (activeThemeLabel) {
+          activeThemeLabel.textContent = theme.name;
+        }
+
+        // Actualizar clase activa en swatches
+        document.querySelectorAll('.theme-swatch').forEach(sw => {
+          if (sw.dataset.themeId === theme.id) {
+            sw.classList.add('active');
+            sw.innerHTML = '✓';
+          } else {
+            sw.classList.remove('active');
+            sw.innerHTML = '';
+          }
+        });
+
+        // Actualizar acento del logo
+        updateCompanyName(clientDemoInput.value);
+      }
+
+      // ===================================================
+      // MODO CLARO / OSCURO (LIGHT & DARK THEME ENGINE)
+      // ===================================================
+      let currentMode = 'light';
+      const themeModeToggle = document.getElementById('themeModeToggle');
+      const btnModeLight = document.getElementById('btnModeLight');
+      const btnModeDark = document.getElementById('btnModeDark');
+      const browserThemePill = document.getElementById('browserThemePill');
+      const browserThemeIcon = document.getElementById('browserThemeIcon');
+      const browserThemeLabel = document.getElementById('browserThemeLabel');
+
+      function setLightDarkMode(mode) {
+        currentMode = (mode === 'dark') ? 'dark' : 'light';
+
+        if (currentMode === 'dark') {
+          if (landingContent) landingContent.classList.add('theme-dark');
+          if (browserFrame) browserFrame.classList.add('theme-dark');
+
+          // Botón del encabezado principal
+          if (themeModeToggle) {
+            themeModeToggle.classList.add('is-dark');
+            const icon = themeModeToggle.querySelector('.mode-icon');
+            const txt = themeModeToggle.querySelector('.mode-text');
+            if (icon) icon.textContent = '☀️';
+            if (txt) txt.textContent = 'Modo Claro';
+            themeModeToggle.title = 'Cambiar a Modo Claro';
+          }
+
+          // Selector de píldoras en el panel lateral
+          if (btnModeLight) btnModeLight.classList.remove('active');
+          if (btnModeDark) btnModeDark.classList.add('active');
+
+          // Píldora en la barra del navegador simulado
+          if (browserThemeIcon) browserThemeIcon.textContent = '☀️';
+          if (browserThemeLabel) browserThemeLabel.textContent = 'Claro';
+        } else {
+          if (landingContent) landingContent.classList.remove('theme-dark');
+          if (browserFrame) browserFrame.classList.remove('theme-dark');
+
+          // Botón del encabezado principal
+          if (themeModeToggle) {
+            themeModeToggle.classList.remove('is-dark');
+            const icon = themeModeToggle.querySelector('.mode-icon');
+            const txt = themeModeToggle.querySelector('.mode-text');
+            if (icon) icon.textContent = '🌙';
+            if (txt) txt.textContent = 'Modo Oscuro';
+            themeModeToggle.title = 'Cambiar a Modo Oscuro';
+          }
+
+          // Selector de píldoras en el panel lateral
+          if (btnModeLight) btnModeLight.classList.add('active');
+          if (btnModeDark) btnModeDark.classList.remove('active');
+
+          // Píldora en la barra del navegador simulado
+          if (browserThemeIcon) browserThemeIcon.textContent = '🌙';
+          if (browserThemeLabel) browserThemeLabel.textContent = 'Oscuro';
+        }
+      }
+
+      function toggleLightDarkMode() {
+        setLightDarkMode(currentMode === 'light' ? 'dark' : 'light');
+      }
+
+      if (themeModeToggle) themeModeToggle.addEventListener('click', toggleLightDarkMode);
+      if (browserThemePill) browserThemePill.addEventListener('click', toggleLightDarkMode);
+      if (btnModeLight) btnModeLight.addEventListener('click', () => setLightDarkMode('light'));
+      if (btnModeDark) btnModeDark.addEventListener('click', () => setLightDarkMode('dark'));
+
+      // ===================================================
+      // MOTOR DE ANIMACIONES (BÁSICAS & AVANZADAS)
+      // ===================================================
+      const sectionAnimations = {};
+      Object.keys(sectionInfo).forEach(key => {
+        sectionAnimations[key] = 'basic';
+      });
+
+      // Función para reiniciar limpiamente cualquier animación CSS
+      function restartAnimation(el, animType) {
+        if (!el) return;
+
+        el.classList.remove('anim-none', 'anim-basic', 'anim-advanced');
+
+        if (animType === 'none') {
+          el.classList.add('anim-none');
+          return;
+        }
+
+        // Cancelar animación inline y en elementos hijos escalonados (stagger)
+        el.style.animation = 'none';
+        const children = el.querySelectorAll('.sim-service-card, .price-card, .step-card, .standard-item, .testi-card, .demo-card, .faq-item');
+        children.forEach(c => c.style.animation = 'none');
+
+        // Forzar reflujo del motor de renderizado
+        void el.offsetHeight;
+
+        // Restaurar animación
+        el.style.animation = '';
+        children.forEach(c => c.style.animation = '');
+        el.classList.add(`anim-${animType}`);
+      }
+
+      function renderAnimationControls() {
+        document.querySelectorAll('.section-item-card').forEach(card => {
+          const sectionKey = card.dataset.target;
+          if (!sectionKey) return;
+          if (card.querySelector('.item-anim-row')) return;
+
+          const meta = card.querySelector('.item-meta');
+          if (!meta) return;
+
+          const animRow = document.createElement('div');
+          animRow.className = 'item-anim-row';
+
+          const curAnim = sectionAnimations[sectionKey] || 'basic';
+
+          animRow.innerHTML = `
+            <span class="anim-label">🎬 Animación:</span>
+            <div class="anim-segmented-group" data-target="${sectionKey}">
+              <button type="button" class="anim-btn ${curAnim === 'none' ? 'active' : ''}" data-anim="none" title="Sin animación">Off</button>
+              <button type="button" class="anim-btn ${curAnim === 'basic' ? 'active' : ''}" data-anim="basic" title="Animación suave: Fade y subida">Básica</button>
+              <button type="button" class="anim-btn ${curAnim === 'advanced' ? 'active' : ''}" data-anim="advanced" title="Animación avanzada: Stagger, destellos y flotación">Avanzada</button>
+            </div>
+          `;
+
+          // Asignar escuchadores de clic directos a cada botón
+          animRow.querySelectorAll('.anim-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              const animType = btn.dataset.anim;
+              setSectionAnimation(sectionKey, animType, true);
+            });
+          });
+
+          meta.appendChild(animRow);
+        });
+      }
+
+      function setSectionAnimation(sectionKey, animType, shouldScroll = false) {
+        sectionAnimations[sectionKey] = animType;
+
+        // Actualizar estado activo en la tarjeta del módulo
+        const group = document.querySelector(`.anim-segmented-group[data-target="${sectionKey}"]`);
+        if (group) {
+          group.querySelectorAll('.anim-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.anim === animType);
+          });
+        }
+
+        // Aplicar y reproducir animación en la previsualización
+        const previewEl = document.getElementById(`preview-${sectionKey}`);
+        if (previewEl) {
+          restartAnimation(previewEl, animType);
+
+          // Si el usuario cambia la animación de una sección específica, scrollear suavemente hacia ella para ver el efecto en vivo
+          if (shouldScroll && !previewEl.classList.contains('is-hidden') && sectionKey !== 'social' && sectionKey !== 'whatsapp') {
+            previewEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        }
+
+        updateGlobalAnimationPills();
+      }
+
+      function setAllAnimations(animType) {
+        Object.keys(sectionInfo).forEach(key => {
+          sectionAnimations[key] = animType;
+          const previewEl = document.getElementById(`preview-${key}`);
+          if (previewEl) {
+            restartAnimation(previewEl, animType);
+          }
+        });
+
+        // Actualizar todos los botones en las tarjetas
+        document.querySelectorAll('.anim-segmented-group').forEach(group => {
+          group.querySelectorAll('.anim-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.anim === animType);
+          });
+        });
+
+        updateGlobalAnimationPills();
+
+        // Efecto visual en el botón de replay de la barra del navegador
+        const btnReplay = document.getElementById('btnReplayAnim');
+        if (btnReplay) {
+          btnReplay.classList.add('is-playing');
+          setTimeout(() => btnReplay.classList.remove('is-playing'), 650);
+        }
+      }
+
+      function updateGlobalAnimationPills() {
+        const types = Object.values(sectionAnimations);
+        const allSame = types.every(t => t === types[0]) ? types[0] : null;
+
+        document.querySelectorAll('.anim-global-btn').forEach(btn => {
+          btn.classList.toggle('active', btn.dataset.setAnim === allSame);
+        });
+      }
+
+      function replayAnimations() {
+        const btnReplay = document.getElementById('btnReplayAnim');
+        if (btnReplay) {
+          btnReplay.classList.add('is-playing');
+          setTimeout(() => btnReplay.classList.remove('is-playing'), 650);
+        }
+
+        // Reiniciar animaciones de todas las secciones activas
+        Object.keys(sectionInfo).forEach(key => {
+          const animType = sectionAnimations[key] || 'basic';
+          const el = document.getElementById(`preview-${key}`);
+          if (el && !el.classList.contains('is-hidden')) {
+            restartAnimation(el, animType);
+          }
+        });
+      }
+
+      // Escuchador delegado para botones de animación en tarjetas (respaldo)
+      document.addEventListener('click', (e) => {
+        const animBtn = e.target.closest('.anim-btn');
+        if (!animBtn) return;
+        e.preventDefault();
+        e.stopPropagation();
+
+        const group = animBtn.closest('.anim-segmented-group');
+        if (!group) return;
+        const targetKey = group.dataset.target;
+        const animType = animBtn.dataset.anim;
+
+        setSectionAnimation(targetKey, animType, true);
+      });
+
+      // Escuchador para píldoras globales de animación
+      document.querySelectorAll('.anim-global-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          setAllAnimations(btn.dataset.setAnim);
+        });
+      });
+
+      // Escuchador botón replay
+      const btnReplayAnim = document.getElementById('btnReplayAnim');
+      if (btnReplayAnim) {
+        btnReplayAnim.addEventListener('click', replayAnimations);
+      }
+
+      // Renderizar cuadrícula de 12 swatches de color
+      function renderThemeSwatches() {
+        if (!themeSwatchesGrid) return;
+        themeSwatchesGrid.innerHTML = '';
+
+        colorThemes.forEach(theme => {
+          const btn = document.createElement('button');
+          btn.className = 'theme-swatch';
+          btn.dataset.themeId = theme.id;
+          btn.title = `${theme.name} (${theme.primary})`;
+          btn.style.backgroundColor = theme.previewHex;
+
+          if (theme.id === currentTheme.id) {
+            btn.classList.add('active');
+            btn.innerHTML = '✓';
+          }
+
+          btn.addEventListener('click', () => {
+            applyColorTheme(theme);
+          });
+
+          themeSwatchesGrid.appendChild(btn);
+        });
+      }
+
+      // Modal elements
+      const openSummaryBtn = document.getElementById('openSummaryBtn');
+      const summaryModal = document.getElementById('summaryModal');
+      const closeModalBtn = document.getElementById('closeModalBtn');
+      const summaryTextOutput = document.getElementById('summaryTextOutput');
+      const copyTextBtn = document.getElementById('copyTextBtn');
+      const sendWhatsAppBtn = document.getElementById('sendWhatsAppBtn');
+
+      // 1. Toggle Section Function
+      function updateSection(sectionKey, isChecked) {
+        const previewElement = document.getElementById(`preview-${sectionKey}`);
+        const cardItem = document.querySelector(`.section-item-card[data-target="${sectionKey}"]`);
+
+        if (previewElement) {
+          if (isChecked) {
+            previewElement.classList.remove('is-hidden');
+          } else {
+            previewElement.classList.add('is-hidden');
+          }
+          if ((sectionKey === 'social' || sectionKey === 'whatsapp') && typeof updateFloatingPositions === 'function') {
+            updateFloatingPositions();
+          }
+        }
+
+        if (cardItem) {
+          if (isChecked) {
+            cardItem.classList.add('is-active');
+          } else {
+            cardItem.classList.remove('is-active');
+          }
+        }
+
+        updateCounters();
+      }
+
+      // Update Counters
+      function updateCounters() {
+        const total = checkboxes.length;
+        const active = Array.from(checkboxes).filter(cb => cb.checked).length;
+        sectionsCounter.textContent = `${active} de ${total} activos`;
+        selectedCountBadge.textContent = active;
+      }
+
+      // Checkbox Change Event
+      checkboxes.forEach(cb => {
+        cb.addEventListener('change', (e) => {
+          const sectionKey = e.target.dataset.section;
+          updateSection(sectionKey, e.target.checked);
+        });
+      });
+
+      // Clicking on card toggles the switch
+      document.querySelectorAll('.section-item-card').forEach(card => {
+        card.addEventListener('click', (e) => {
+          if (e.target.tagName.toLowerCase() === 'input' || e.target.closest('.item-anim-row')) return;
+          const targetKey = card.dataset.target;
+          const input = card.querySelector('input');
+          if (input) {
+            input.checked = !input.checked;
+            updateSection(targetKey, input.checked);
+          }
+        });
+      });
+
+      // 2. Presets Handler
+      presetBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          presetBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          const preset = btn.dataset.preset;
+
+          if (preset === 'all') {
+            checkboxes.forEach(cb => {
+              cb.checked = true;
+              updateSection(cb.dataset.section, true);
+            });
+          } else if (preset === 'clear') {
+            checkboxes.forEach(cb => {
+              cb.checked = false;
+              updateSection(cb.dataset.section, false);
+            });
+          } else if (preset === 'recommended') {
+            const recommended = ['topbar', 'navbar', 'hero', 'problem-solution', 'services', 'standards', 'demos', 'pricing', 'contact', 'whatsapp', 'social', 'footer'];
+            checkboxes.forEach(cb => {
+              const shouldBeChecked = recommended.includes(cb.dataset.section);
+              cb.checked = shouldBeChecked;
+              updateSection(cb.dataset.section, shouldBeChecked);
+            });
+          } else if (preset === 'minimal') {
+            const minimal = ['navbar', 'hero', 'services', 'pricing', 'contact', 'whatsapp', 'footer'];
+            checkboxes.forEach(cb => {
+              const shouldBeChecked = minimal.includes(cb.dataset.section);
+              cb.checked = shouldBeChecked;
+              updateSection(cb.dataset.section, shouldBeChecked);
+            });
+          }
+        });
+      });
+
+      // 3. Device Switcher with REAL Responsive
+      deviceBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          deviceBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          const view = btn.dataset.view;
+          browserFrame.classList.remove('view-tablet', 'view-mobile');
+
+          if (view === 'tablet') {
+            browserFrame.classList.add('view-tablet');
+          } else if (view === 'mobile') {
+            browserFrame.classList.add('view-mobile');
+          }
+
+          // Reset preview scroll to top on device change
+          previewCanvasScroll.scrollTop = 0;
+          if (typeof updateFloatingPositions === 'function') {
+            updateFloatingPositions();
+            setTimeout(updateFloatingPositions, 60);
+            setTimeout(updateFloatingPositions, 360);
+          }
+        });
+      });
+
+      // 4. Live Company Name Change
+      function updateCompanyName(rawVal) {
+        const val = (rawVal || '').trim() || 'Tu Empresa';
+
+        // Renderizado estilizado del logo en el navbar (resalta la última palabra con el acento del tema)
+        if (navbarLogoText) {
+          const words = val.split(/\s+/).filter(Boolean);
+          if (words.length > 1) {
+            const lastWord = words.pop();
+            navbarLogoText.innerHTML = `<span>${words.join(' ')}</span> <span style="color:var(--lp-accent);">${lastWord}</span>`;
+          } else {
+            navbarLogoText.innerHTML = `<span>${val}</span>`;
+          }
+        }
+
+        // Actualizar todos los demás textos que muestran el nombre completo (como footer)
+        brandNameDisplays.forEach(el => el.textContent = val);
+
+        // Generar dominio limpio .cl
+        const cleanSlug = val.toLowerCase()
+          .replace(/\b(spa|s\.p\.a|ltda|limitada|sa|s\.a|eirl)\b/gi, '')
+          .replace(/[^a-z0-9]/g, '')
+          .slice(0, 16) || 'tuempresa';
+        const domain = cleanSlug + '.cl';
+
+        clientDomainTexts.forEach(el => el.textContent = domain);
+        if (urlPreview) urlPreview.textContent = domain;
+      }
+
+      clientDemoInput.addEventListener('input', (e) => {
+        updateCompanyName(e.target.value);
+      });
+
+      // 5. Generadores de Exportación: Propuesta, Prompt IA y HTML Completo
+
+      // A) Resumen Comercial / Descripción Actual
+      function generateProposalText() {
+        const companyName = clientDemoInput.value.trim() || 'Empresa Cliente';
+        const cleanSlug = companyName.toLowerCase()
+          .replace(/\b(spa|s\.p\.a|ltda|limitada|sa|s\.a|eirl)\b/gi, '')
+          .replace(/[^a-z0-9]/g, '')
+          .slice(0, 16) || 'tuempresa';
+        const domain = cleanSlug + '.cl';
+
+        const activeSections = [];
+
+        checkboxes.forEach(cb => {
+          if (cb.checked) {
+            const key = cb.dataset.section;
+            if (sectionInfo[key]) {
+              const aType = sectionAnimations[key] || 'basic';
+              const aName = (aType === 'none') ? 'Sin Animación' : (aType === 'advanced' ? 'Animación Avanzada' : 'Animación Básica');
+              activeSections.push(`• ${sectionInfo[key].name} [${aName}]: ${sectionInfo[key].desc}`);
+            }
+          }
+        });
+
+        const text = `ESTRUCTURA DE SITIO WEB CORPORATIVO MINERO
+Propuesta generada para: ${companyName}
+Proveedor Tecnológico: AppMinera.cl
+------------------------------------------------------
+Tema y Color Predominante: ${currentTheme.name} (${currentTheme.primary})
+Modo de Apariencia: ${currentMode === 'dark' ? 'Modo Oscuro (Fondo Industrial / Alto Contraste)' : 'Modo Claro (Fondo Corporativo Limpio)'}
+Total de Módulos Seleccionados: ${activeSections.length} de ${checkboxes.length}
+
+SECCIONES INCLUIDAS EN LA LANDING PAGE:
+${activeSections.join('\n')}
+
+SERVICIOS COMPLEMENTARIOS INCLUIDOS:
+• Correos Corporativos cifrados @${domain}
+• Certificado de Seguridad SSL (https://)
+• Optimización móvil para supervisores y jefaturas en faena
+• Botón de WhatsApp directo para cotizaciones urgentes
+• Barra lateral retráctil de redes sociales (LinkedIn, Instagram, Facebook, X)
+
+------------------------------------------------------
+Desarrollado y Acreditado por AppMinera.cl
+Soluciones Digitales para Contratistas & Proveedores Mineros`;
+
+        return text;
+      }
+
+      // B) Prompt Maestro para Inteligencia Artificial (ChatGPT, Claude, DeepSeek, Gemini)
+      function generatePromptText() {
+        const companyName = clientDemoInput.value.trim() || 'Empresa Minera Cliente';
+        const cleanSlug = companyName.toLowerCase()
+          .replace(/\b(spa|s\.p\.a|ltda|limitada|sa|s\.a|eirl)\b/gi, '')
+          .replace(/[^a-z0-9]/g, '')
+          .slice(0, 16) || 'tuempresa';
+        const domain = cleanSlug + '.cl';
+
+        const activeSections = [];
+        checkboxes.forEach(cb => {
+          if (cb.checked) {
+            const key = cb.dataset.section;
+            if (sectionInfo[key]) {
+              const aType = sectionAnimations[key] || 'basic';
+              const aName = (aType === 'none') ? 'Sin Animación' : (aType === 'advanced' ? 'Animación Avanzada' : 'Animación Básica');
+              activeSections.push(`- **${sectionInfo[key].name}** [${aName}]: ${sectionInfo[key].desc}`);
+            }
+          }
+        });
+
+        const animGlobal = document.querySelector('.anim-global-btn.active')?.textContent.trim() || 'Básicas';
+
+        return `# PROMPT MAESTRO: LANDING PAGE B2B MINERA (${companyName.toUpperCase()})
+
+Actúa como un Diseñador Web Senior y Desarrollador Frontend experto en la industria minera, energética e industrial en Chile (mercado B2B y faenas mineras).
+Tu tarea es implementar, adaptar o redactar el contenido comercial completo para la Landing Page corporativa de la siguiente empresa:
+
+## 1. INFORMACIÓN DE LA EMPRESA & MARCA
+- Nombre Comercial: "${companyName}"
+- Dominio Web: https://${domain}
+- Mercado Objetivo: Proveedores y Contratistas Mineros en Chile (SICEP, REGIC, Minera Escondida, Codelco, Collahuasi, Centinela, Pelambres).
+- Tono de Comunicación: Técnico, sobrio, formal, de alta seguridad HSEC y orientado a licitaciones y contratos marco.
+
+## 2. CONFIGURACIÓN VISUAL & PALETA DE COLORES
+- Paleta Corporativa Seleccionada: ${currentTheme.name}
+  * Color Primario Institucional: ${currentTheme.primary}
+  * Color Medio / Gradientes: ${currentTheme.medium}
+  * Color de Fondo / Secciones Oscuras: ${currentTheme.dark}
+  * Color de Acento / Botones de Cotización: ${currentTheme.accent}
+- Modo de Apariencia: ${currentMode === 'dark' ? 'Modo Oscuro (High Contrast / Dark Theme Industrial)' : 'Modo Claro (Clean Corporate B2B)'}
+- Nivel Global de Animación: ${animGlobal}
+
+## 3. SECCIONES Y MÓDULOS REQUERIDOS (${activeSections.length} de ${checkboxes.length} Activos):
+${activeSections.join('\n')}
+
+## 4. CANALES DE CONTACTO & CONVERSIÓN
+- Botón de WhatsApp flotante para comunicación directa con supervisores y gerentes de faena.
+- Barra lateral de Redes Sociales (LinkedIn corporativo, Instagram, Facebook y perfil X).
+- Formulario de cotización con selector de faena (Antofagasta, Calama, Copiapó, Tarapacá, Coquimbo, Santiago).
+- Casillas corporativas oficiales cifradas @${domain}.
+
+## 5. INSTRUCCIONES DE DESARROLLO & COPYWRITING
+- Genera titulares directos de alto impacto enfocados en confiabilidad operativa, cero incidentes y cumplimiento contractual.
+- Asegura que el código sea 100% responsivo para smartphones (usado ampliamente por personal de faena) y pantallas de escritorio.
+- Todo el código debe estar bien estructurado, semántico (HTML5, CSS moderno) y optimizado para velocidad de carga en zonas remotas.`;
+      }
+
+      // Función para extraer los 45KB exactos de CSS de la landing page simulada
+      function extractCompleteLandingCSS() {
+        const styleEl = document.querySelector('style');
+        if (!styleEl) return '';
+        const allCSS = styleEl.textContent;
+        const startMarker = '/* SIMULATED MINING LANDING PAGE SECTIONS';
+        const endMarker = '/* MODAL DE RESUMEN';
+
+        const startIdx = allCSS.indexOf(startMarker);
+        let endIdx = allCSS.indexOf(endMarker);
+
+        if (startIdx === -1 || endIdx === -1) {
+          return '';
+        }
+
+        return allCSS.substring(startIdx, endIdx);
+      }
+
+      // C) Generador de Archivo HTML Completo y Autónomo (Standalone) - 100% IDÉNTICO AL PREVIEW
+      function generateStandaloneLandingHTML() {
+        const companyName = clientDemoInput.value.trim() || 'Servicios Mineros';
+        const cleanSlug = companyName.toLowerCase()
+          .replace(/\b(spa|s\.p\.a|ltda|limitada|sa|s\.a|eirl)\b/gi, '')
+          .replace(/[^a-z0-9]/g, '')
+          .slice(0, 16) || 'tuempresa';
+        const domain = cleanSlug + '.cl';
+        const isDark = currentMode === 'dark';
+
+        // Extraer los 45KB exactos de CSS de la landing simulada (incluye Hero mock, grids, badges, etc.)
+        const fullLandingCSS = extractCompleteLandingCSS();
+
+        // Clonar las secciones simuladas
+        const landingClone = landingContent.cloneNode(true);
+
+        // Remover secciones no seleccionadas
+        landingClone.querySelectorAll('.sim-section.is-hidden').forEach(el => el.remove());
+
+        // Remover etiquetas internas del configurador ("Módulo: ...")
+        landingClone.querySelectorAll('.section-tag-indicator').forEach(el => el.remove());
+
+        // Limpiar posicionamiento inline en WhatsApp y Redes para que usen las reglas CSS de pantalla completa
+        landingClone.querySelectorAll('#preview-whatsapp, #preview-social').forEach(el => {
+          el.removeAttribute('style');
+        });
+
+        const bodyHTML = landingClone.innerHTML;
+
+        const htmlOutput = `<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${companyName} | Soluciones para la Gran Minería</title>
+  <meta name="description" content="Sitio web corporativo de ${companyName}. Servicios especializados para la gran minería e industria en Chile. Cobertura en faena y cumplimiento HSEC.">
+  <meta name="keywords" content="${companyName}, servicios mineros, proveedores mineria chile, contratistas faena, SICEP, HSEC">
+  
+  <!-- Tipografía Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root, .live-landing-content {
+      --lp-primary: ${currentTheme.primary};
+      --lp-medium: ${currentTheme.medium};
+      --lp-dark: ${currentTheme.dark};
+      --lp-accent: ${currentTheme.accent};
+      --lp-accent-dark: ${currentTheme.accentDark};
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: ${isDark ? '#030712' : '#080d19'};
+      color: ${isDark ? '#f1f5f9' : '#1e293b'};
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Contenedor idéntico al visor de 1160px centrado */
+    .landing-site-wrapper {
+      width: 100%;
+      max-width: 1160px;
+      margin: 0 auto;
+      background: ${isDark ? '#060b14' : '#ffffff'};
+      box-shadow: 0 10px 50px rgba(0, 0, 0, 0.45);
+      position: relative;
+      min-height: 100vh;
+    }
+
+    .live-landing-content {
+      width: 100%;
+      position: relative;
+      background: ${isDark ? '#060b14' : '#ffffff'};
+    }
+
+    /* =================================================== */
+    /* ESTILOS 100% IDÉNTICOS DE LA PREVISUALIZACIÓN       */
+    /* =================================================== */
+    ${fullLandingCSS}
+
+    /* =================================================== */
+    /* POSICIONAMIENTO FLOTANTE STANDALONE (ALINEADO)     */
+    /* =================================================== */
+    .sim-wa-floating {
+      position: fixed !important;
+      bottom: 26px !important;
+      right: calc((100vw - min(100vw, 1160px)) / 2 + 24px) !important;
+      z-index: 9999 !important;
+      display: flex !important;
+      opacity: 1 !important;
+      pointer-events: auto !important;
+    }
+
+    @media (max-width: 1220px) {
+      .sim-wa-floating {
+        right: 20px !important;
+      }
+    }
+
+    .sim-social-sidebar {
+      position: fixed !important;
+      top: 50% !important;
+      right: calc((100vw - min(100vw, 1160px)) / 2) !important;
+      transform: translateY(-50%) !important;
+      z-index: 9998 !important;
+      display: flex !important;
+      opacity: 1 !important;
+      pointer-events: auto !important;
+    }
+
+    @media (max-width: 1220px) {
+      .sim-social-sidebar {
+        right: 0 !important;
+      }
+    }
+  </style>
+</head>
+<body class="${isDark ? 'theme-dark' : ''}">
+
+  <div class="landing-site-wrapper">
+    <div class="live-landing-content ${isDark ? 'theme-dark' : ''}">
+${bodyHTML}
+    </div>
+  </div>
+
+  <script>
+    // Pestaña retráctil de redes sociales lateral
+    const simSocialTab = document.getElementById('simSocialTab');
+    const previewSocial = document.getElementById('preview-social');
+    if (simSocialTab && previewSocial) {
+      simSocialTab.addEventListener('click', (e) => {
+        e.stopPropagation();
+        previewSocial.classList.toggle('is-collapsed');
+      });
+    }
+
+    // Scroll suave a cotizar
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href && href.startsWith('#') && href.length > 1) {
+          const target = document.querySelector(href);
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      });
+    });
+  <\/script>
+</body>
+</html>`;
+
+        return htmlOutput;
+      }
+
+      // Función para descargar el archivo HTML generado
+      function downloadLandingHTML() {
+        const companyName = clientDemoInput.value.trim() || 'Servicios Mineros';
+        const cleanSlug = companyName.toLowerCase()
+          .replace(/\b(spa|s\.p\.a|ltda|limitada|sa|s\.a|eirl)\b/gi, '')
+          .replace(/[^a-z0-9]/g, '')
+          .slice(0, 16) || 'tuempresa';
+        const fileName = `landing-${cleanSlug}.html`;
+        const content = generateStandaloneLandingHTML();
+
+        const blob = new Blob([content], { type: 'text/html;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = fileName;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      }
+
+      // 6. Navegación de Pestañas del Modal de Exportación
+      const modalTabs = document.querySelectorAll('.modal-tab-btn');
+      const tabContents = {
+        'description': document.getElementById('tabContentDescription'),
+        'prompt': document.getElementById('tabContentPrompt'),
+        'html': document.getElementById('tabContentHtml')
+      };
+
+      modalTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          modalTabs.forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+
+          const target = tab.dataset.tab;
+          Object.values(tabContents).forEach(content => {
+            if (content) content.classList.remove('active');
+          });
+          if (tabContents[target]) {
+            tabContents[target].classList.add('active');
+          }
+        });
+      });
+
+      // Elementos del Modal
+      const promptTextOutput = document.getElementById('promptTextOutput');
+      const copyPromptBtn = document.getElementById('copyPromptBtn');
+      const htmlCodePreview = document.getElementById('htmlCodePreview');
+      const downloadHtmlBtn = document.getElementById('downloadHtmlBtn');
+      const copyHtmlCodeBtn = document.getElementById('copyHtmlCodeBtn');
+      const downloadFileNameTitle = document.getElementById('downloadFileNameTitle');
+      const downloadModeText = document.getElementById('downloadModeText');
+      const htmlActiveCount = document.getElementById('htmlActiveCount');
+      const htmlThemeName = document.getElementById('htmlThemeName');
+
+      // Apertura del Modal y carga de los 3 formatos
+      openSummaryBtn.addEventListener('click', () => {
+        const companyName = clientDemoInput.value.trim() || 'Servicios Mineros';
+        const cleanSlug = companyName.toLowerCase()
+          .replace(/\b(spa|s\.p\.a|ltda|limitada|sa|s\.a|eirl)\b/gi, '')
+          .replace(/[^a-z0-9]/g, '')
+          .slice(0, 16) || 'tuempresa';
+        const activeCount = Array.from(checkboxes).filter(cb => cb.checked).length;
+
+        // 1. Cargar Descripción Actual
+        summaryTextOutput.textContent = generateProposalText();
+
+        // 2. Cargar Prompt para IA
+        if (promptTextOutput) {
+          promptTextOutput.textContent = generatePromptText();
+        }
+
+        // 3. Generar HTML y precargar vista previa y metadatos
+        const htmlCode = generateStandaloneLandingHTML();
+        if (htmlCodePreview) {
+          htmlCodePreview.textContent = htmlCode;
+        }
+        if (downloadFileNameTitle) {
+          downloadFileNameTitle.textContent = `landing-${cleanSlug}.html`;
+        }
+        if (downloadModeText) {
+          downloadModeText.textContent = currentMode === 'dark' ? 'Oscuro' : 'Claro';
+        }
+        if (htmlActiveCount) {
+          htmlActiveCount.textContent = activeCount;
+        }
+        if (htmlThemeName) {
+          htmlThemeName.textContent = currentTheme.name;
+        }
+
+        summaryModal.classList.add('open');
+      });
+
+      closeModalBtn.addEventListener('click', () => {
+        summaryModal.classList.remove('open');
+      });
+
+      summaryModal.addEventListener('click', (e) => {
+        if (e.target === summaryModal) {
+          summaryModal.classList.remove('open');
+        }
+      });
+
+      // Botón: Copiar Propuesta Comercial
+      copyTextBtn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(summaryTextOutput.textContent);
+          copyTextBtn.textContent = '✅ ¡Propuesta Copiada!';
+          setTimeout(() => {
+            copyTextBtn.textContent = '📄 Copiar Propuesta';
+          }, 2000);
+        } catch (err) {
+          alert('Selecciona y copia el texto manualmente.');
+        }
+      });
+
+      // Botón: Enviar Propuesta por WhatsApp
+      sendWhatsAppBtn.addEventListener('click', () => {
+        const text = encodeURIComponent(summaryTextOutput.textContent);
+        const url = `https://wa.me/?text=${text}`;
+        window.open(url, '_blank');
+      });
+
+      // Botón: Copiar Prompt IA
+      if (copyPromptBtn) {
+        copyPromptBtn.addEventListener('click', async () => {
+          try {
+            await navigator.clipboard.writeText(promptTextOutput.textContent);
+            copyPromptBtn.textContent = '✅ ¡Prompt Copiado!';
+            setTimeout(() => {
+              copyPromptBtn.textContent = '🤖 Copiar Prompt para IA';
+            }, 2000);
+          } catch (err) {
+            alert('Selecciona y copia el texto del prompt.');
+          }
+        });
+      }
+
+      // Botón: Descargar Archivo HTML (.html)
+      if (downloadHtmlBtn) {
+        downloadHtmlBtn.addEventListener('click', () => {
+          downloadLandingHTML();
+        });
+      }
+
+      // Botón: Copiar Código HTML al Portapapeles
+      if (copyHtmlCodeBtn) {
+        copyHtmlCodeBtn.addEventListener('click', async () => {
+          try {
+            const code = generateStandaloneLandingHTML();
+            await navigator.clipboard.writeText(code);
+            copyHtmlCodeBtn.textContent = '✅ ¡HTML Copiado!';
+            setTimeout(() => {
+              copyHtmlCodeBtn.innerHTML = '<span>📋</span> Copiar Código HTML';
+            }, 2000);
+          } catch (err) {
+            alert('Selecciona y copia el código HTML.');
+          }
+        });
+      }
+
+      // Floating Elements: Social Sidebar & WhatsApp Button
+      const socialSidebar = document.getElementById('preview-social');
+      const socialTab = document.getElementById('simSocialTab');
+      const whatsappBtn = document.getElementById('preview-whatsapp');
+
+      function updateFloatingPositions() {
+        if (!browserFrame) return;
+
+        const frameRect = browserFrame.getBoundingClientRect();
+        const isMobile = browserFrame.classList.contains('view-mobile');
+        const borderOffset = isMobile ? 10 : 0;
+        const isOutOfView = frameRect.bottom < 80 || frameRect.top > window.innerHeight - 80;
+
+        // 1. Barra de Redes Sociales Lateral (costado derecho)
+        if (socialSidebar) {
+          if (socialSidebar.classList.contains('is-hidden')) {
+            socialSidebar.style.display = 'none';
+          } else {
+            socialSidebar.style.display = 'flex';
+            if (isOutOfView) {
+              socialSidebar.style.opacity = '0';
+              socialSidebar.style.pointerEvents = 'none';
+            } else {
+              socialSidebar.style.opacity = '1';
+              socialSidebar.style.pointerEvents = 'auto';
+              const rightOffset = window.innerWidth - (frameRect.right - borderOffset);
+              socialSidebar.style.right = `${Math.max(0, rightOffset)}px`;
+            }
+          }
+        }
+
+        // 2. Botón Flotante de WhatsApp (esquina inferior derecha del sitio simulado)
+        if (whatsappBtn) {
+          if (whatsappBtn.classList.contains('is-hidden')) {
+            whatsappBtn.style.display = 'none';
+          } else {
+            whatsappBtn.style.display = 'flex';
+            if (isOutOfView) {
+              whatsappBtn.style.opacity = '0';
+              whatsappBtn.style.pointerEvents = 'none';
+            } else {
+              whatsappBtn.style.opacity = '1';
+              whatsappBtn.style.pointerEvents = 'auto';
+
+              const hMargin = isMobile ? 16 : 24;
+              const bMargin = isMobile ? 18 : 24;
+
+              const rightOffset = (window.innerWidth - (frameRect.right - borderOffset)) + hMargin;
+              const bottomOffset = Math.max(bMargin, (window.innerHeight - (frameRect.bottom - borderOffset)) + bMargin);
+
+              whatsappBtn.style.right = `${Math.max(0, rightOffset)}px`;
+              whatsappBtn.style.bottom = `${bottomOffset}px`;
+            }
+          }
+        }
+      }
+
+      // Alias para compatibilidad
+      const updateSocialPosition = updateFloatingPositions;
+
+      if (socialTab && socialSidebar) {
+        socialTab.addEventListener('click', (e) => {
+          e.stopPropagation();
+          socialSidebar.classList.toggle('is-collapsed');
+          const isCollapsed = socialSidebar.classList.contains('is-collapsed');
+          socialTab.setAttribute('title', isCollapsed ? 'Mostrar redes sociales' : 'Ocultar redes sociales');
+          socialTab.setAttribute('aria-label', isCollapsed ? 'Mostrar redes sociales' : 'Ocultar redes sociales');
+        });
+      }
+
+      // Escuchadores de scroll y resize para mantener alineados los elementos flotantes
+      previewCanvasScroll.addEventListener('scroll', updateFloatingPositions, { passive: true });
+      window.addEventListener('resize', updateFloatingPositions, { passive: true });
+
+      // Initial setup
+      renderThemeSwatches();
+      applyColorTheme(colorThemes[0]);
+      setLightDarkMode('light');
+      renderAnimationControls();
+      setAllAnimations('basic');
+      updateCompanyName(clientDemoInput.value);
+      updateCounters();
+      updateFloatingPositions();
+    });
+  </script>
+</body>
+</html>
+
+    </div>
+  </div>
+
+  <script>
+    // Pestaña retráctil de redes sociales lateral
+    const simSocialTab = document.getElementById('simSocialTab');
+    const previewSocial = document.getElementById('preview-social');
+    if (simSocialTab && previewSocial) {
+      simSocialTab.addEventListener('click', (e) => {
+        e.stopPropagation();
+        previewSocial.classList.toggle('is-collapsed');
+      });
+    }
+
+    // Scroll suave a cotizar
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href && href.startsWith('#') && href.length > 1) {
+          const target = document.querySelector(href);
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
