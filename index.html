@@ -2609,13 +2609,15 @@
       border: 1px solid #23375a;
       border-radius: var(--radius-md);
       width: 100%;
-      max-width: 620px;
-      max-height: 85vh;
-      overflow-y: auto;
+      max-width: 720px;
+      max-height: 88vh;
+      display: flex;
+      flex-direction: column;
       color: #f8fafc;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+      box-shadow: 0 25px 60px rgba(0,0,0,0.8);
       transform: translateY(20px);
       transition: transform 0.25s ease;
+      overflow: hidden;
     }
 
     .modal-backdrop.open .modal-window {
@@ -2623,15 +2625,16 @@
     }
 
     .modal-header {
-      padding: 18px 24px;
+      padding: 16px 22px;
       border-bottom: 1px solid #1e2f4f;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      background: #090f1a;
     }
 
     .modal-header h3 {
-      font-size: 1.1rem;
+      font-size: 1.08rem;
       font-weight: 700;
       color: #f8fafc;
     }
@@ -2640,12 +2643,81 @@
       background: none;
       border: none;
       color: #94a3b8;
-      font-size: 1.4rem;
+      font-size: 1.5rem;
       cursor: pointer;
+      line-height: 1;
+      padding: 2px 6px;
+      border-radius: 4px;
+      transition: all 0.2s ease;
+    }
+
+    .modal-close-btn:hover {
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Pestañas del Modal */
+    .modal-tabs-nav {
+      display: flex;
+      background: #080d17;
+      border-bottom: 1px solid #1e2f4f;
+      padding: 8px 18px 0 18px;
+      gap: 6px;
+    }
+
+    .modal-tab-btn {
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid transparent;
+      color: #94a3b8;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 8px 14px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+      border-radius: 6px 6px 0 0;
+    }
+
+    .modal-tab-btn:hover {
+      color: #f1f5f9;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .modal-tab-btn.active {
+      color: #fbbf24;
+      border-bottom-color: #fbbf24;
+      background: rgba(251, 191, 36, 0.08);
+      font-weight: 700;
     }
 
     .modal-body {
-      padding: 24px;
+      padding: 20px 22px;
+      overflow-y: auto;
+      flex: 1;
+    }
+
+    .modal-tab-content {
+      display: none;
+    }
+
+    .modal-tab-content.active {
+      display: block;
+      animation: tabFadeIn 0.25s ease both;
+    }
+
+    @keyframes tabFadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .tab-explanation {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      margin-bottom: 12px;
+      line-height: 1.45;
     }
 
     .summary-text-box {
@@ -2653,19 +2725,97 @@
       border: 1px solid #1c2e50;
       border-radius: 8px;
       padding: 14px;
-      font-family: monospace;
-      font-size: 0.8rem;
+      font-family: 'JetBrains Mono', 'Fira Code', monospace;
+      font-size: 0.78rem;
       color: #38bdf8;
       white-space: pre-wrap;
-      max-height: 280px;
+      max-height: 300px;
       overflow-y: auto;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+
+    .summary-text-box.prompt-box {
+      color: #a7f3d0;
+      border-color: #065f46;
+      background: #03140e;
+    }
+
+    .summary-text-box.code-preview-box {
+      color: #cbd5e1;
+      max-height: 160px;
+      font-size: 0.72rem;
     }
 
     .modal-actions {
       display: flex;
       gap: 10px;
       justify-content: flex-end;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-action-primary {
+      background: linear-gradient(135deg, #0284c7, #0369a1);
+      color: #ffffff;
+      font-weight: 700;
+      border: none;
+      padding: 9px 18px;
+      border-radius: 6px;
+      font-size: 0.84rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.35);
+    }
+
+    .btn-action-primary:hover {
+      filter: brightness(1.15);
+      transform: translateY(-1px);
+    }
+
+    .btn-action-download {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: #07172c;
+      font-weight: 800;
+      border: none;
+      padding: 11px 22px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 16px rgba(245, 158, 11, 0.4);
+    }
+
+    .btn-action-download:hover {
+      filter: brightness(1.1);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(245, 158, 11, 0.55);
+    }
+
+    .btn-action-secondary {
+      background: #1e293b;
+      color: #f1f5f9;
+      font-weight: 600;
+      border: 1px solid #334155;
+      padding: 9px 16px;
+      border-radius: 6px;
+      font-size: 0.84rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-action-secondary:hover {
+      background: #334155;
+      color: #ffffff;
     }
 
     .btn-copy-wa {
@@ -2680,17 +2830,76 @@
       display: flex;
       align-items: center;
       gap: 6px;
+      transition: all 0.2s ease;
     }
 
-    .btn-copy-text {
-      background: #243552;
-      color: #fff;
-      font-weight: 600;
-      border: none;
-      padding: 9px 16px;
-      border-radius: 6px;
-      font-size: 0.84rem;
-      cursor: pointer;
+    .btn-copy-wa:hover {
+      filter: brightness(1.1);
+      transform: translateY(-1px);
+    }
+
+    /* Tarjeta de descarga de HTML */
+    .html-download-card {
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(11, 37, 69, 0.6));
+      border: 1px solid rgba(245, 158, 11, 0.25);
+      border-radius: 10px;
+      padding: 18px;
+      margin-bottom: 14px;
+    }
+
+    .html-card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .html-card-icon {
+      font-size: 2rem;
+      background: rgba(245, 158, 11, 0.15);
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      flex-shrink: 0;
+    }
+
+    .html-card-header h4 {
+      font-size: 1rem;
+      color: #fbbf24;
+      font-weight: 700;
+      margin-bottom: 3px;
+    }
+
+    .html-card-header p {
+      font-size: 0.78rem;
+      color: #cbd5e1;
+      line-height: 1.4;
+    }
+
+    .html-features-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 8px;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .html-feature-pill {
+      font-size: 0.74rem;
+      color: #94a3b8;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .html-feature-pill span {
+      color: #f59e0b;
+      font-weight: 700;
     }
   </style>
 </head>
@@ -3512,18 +3721,88 @@
   <div class="modal-backdrop" id="summaryModal">
     <div class="modal-window">
       <div class="modal-header">
-        <h3>📋 Resumen de Propuesta de Landing Page</h3>
-        <button class="modal-close-btn" id="closeModalBtn">&times;</button>
-      </div>
-      <div class="modal-body">
-        <p style="font-size:0.82rem; color:#94a3b8; margin-bottom:12px;">
-          Este desglose contiene exactamente las secciones seleccionadas. Puedes copiarlo para enviarlo por WhatsApp o adjuntarlo en tu cotización:
-        </p>
-        <div class="summary-text-box" id="summaryTextOutput"></div>
-        <div class="modal-actions">
-          <button class="btn-copy-text" id="copyTextBtn">📄 Copiar Texto</button>
-          <button class="btn-copy-wa" id="sendWhatsAppBtn">📱 Enviar por WhatsApp</button>
+        <div style="display:flex; align-items:center; gap:10px;">
+          <span style="font-size:1.3rem;">📦</span>
+          <div>
+            <h3>Centro de Exportación & Propuesta</h3>
+            <span style="font-size:0.73rem; color:#94a3b8; display:block;">Propuesta comercial, prompt para IA y descarga de código HTML</span>
+          </div>
         </div>
+        <button class="modal-close-btn" id="closeModalBtn" title="Cerrar modal">&times;</button>
+      </div>
+
+      <!-- Pestañas de Navegación del Modal -->
+      <div class="modal-tabs-nav">
+        <button type="button" class="modal-tab-btn active" data-tab="description">
+          <span>📋</span> Descripción Actual
+        </button>
+        <button type="button" class="modal-tab-btn" data-tab="prompt">
+          <span>🤖</span> Prompt para IA
+        </button>
+        <button type="button" class="modal-tab-btn" data-tab="html">
+          <span>💾</span> Descargar HTML
+        </button>
+      </div>
+
+      <div class="modal-body">
+        
+        <!-- TAB 1: DESCRIPCIÓN ACTUAL / PROPUESTA COMERCIAL -->
+        <div class="modal-tab-content active" id="tabContentDescription">
+          <p class="tab-explanation">
+            Resumen comercial listo para enviar por WhatsApp o adjuntar a cotizaciones formales para tu cliente:
+          </p>
+          <div class="summary-text-box" id="summaryTextOutput"></div>
+          <div class="modal-actions">
+            <button type="button" class="btn-action-secondary" id="copyTextBtn">📄 Copiar Propuesta</button>
+            <button type="button" class="btn-copy-wa" id="sendWhatsAppBtn">📱 Enviar por WhatsApp</button>
+          </div>
+        </div>
+
+        <!-- TAB 2: PROMPT PARA INTELIGENCIA ARTIFICIAL -->
+        <div class="modal-tab-content" id="tabContentPrompt">
+          <p class="tab-explanation">
+            Copia este prompt maestro estructurado y pégalo en <strong>ChatGPT, Claude, DeepSeek o Gemini</strong> para desarrollar, expandir o redactar contenido especializado con la configuración exacta de esta landing:
+          </p>
+          <div class="summary-text-box prompt-box" id="promptTextOutput"></div>
+          <div class="modal-actions">
+            <button type="button" class="btn-action-primary" id="copyPromptBtn">🤖 Copiar Prompt para IA</button>
+          </div>
+        </div>
+
+        <!-- TAB 3: DESCARGA DE ARCHIVO HTML AUTÓNOMO -->
+        <div class="modal-tab-content" id="tabContentHtml">
+          <div class="html-download-card">
+            <div class="html-card-header">
+              <div class="html-card-icon">🌐</div>
+              <div>
+                <h4 id="downloadFileNameTitle">landing-empresa.html</h4>
+                <p>Archivo web independiente listo para producción con todos los estilos, colores, modo <span id="downloadModeText" style="color:#fbbf24; font-weight:700;">Claro</span> y módulos seleccionados.</p>
+              </div>
+            </div>
+            
+            <div class="html-features-list">
+              <div class="html-feature-pill">✓ Solo módulos activos: <span id="htmlActiveCount" style="color:#fbbf24; font-weight:700;">15</span></div>
+              <div class="html-feature-pill">✓ Paleta inyectada: <span id="htmlThemeName" style="color:#fbbf24; font-weight:700;">Azul Marino</span></div>
+              <div class="html-feature-pill">✓ WhatsApp y Redes persistentes</div>
+              <div class="html-feature-pill">✓ 100% Responsive para móviles y faena</div>
+            </div>
+
+            <div class="modal-actions" style="margin-top:16px; justify-content:center; gap:12px;">
+              <button type="button" class="btn-action-download" id="downloadHtmlBtn">
+                <span>⬇️</span> Descargar Archivo HTML (.html)
+              </button>
+              <button type="button" class="btn-action-secondary" id="copyHtmlCodeBtn">
+                <span>📋</span> Copiar Código HTML
+              </button>
+            </div>
+          </div>
+
+          <div style="margin-top:14px;">
+            <label style="font-size:0.75rem; color:#94a3b8; font-weight:600; margin-bottom:6px; display:block;">Vista previa del código HTML generado:</label>
+            <div class="summary-text-box code-preview-box" id="htmlCodePreview"></div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
@@ -4042,9 +4321,17 @@
         updateCompanyName(e.target.value);
       });
 
-      // 5. Generate Text Summary
+      // 5. Generadores de Exportación: Propuesta, Prompt IA y HTML Completo
+
+      // A) Resumen Comercial / Descripción Actual
       function generateProposalText() {
         const companyName = clientDemoInput.value.trim() || 'Empresa Cliente';
+        const cleanSlug = companyName.toLowerCase()
+          .replace(/\b(spa|s\.p\.a|ltda|limitada|sa|s\.a|eirl)\b/gi, '')
+          .replace(/[^a-z0-9]/g, '')
+          .slice(0, 16) || 'tuempresa';
+        const domain = cleanSlug + '.cl';
+
         const activeSections = [];
 
         checkboxes.forEach(cb => {
@@ -4070,10 +4357,11 @@ SECCIONES INCLUIDAS EN LA LANDING PAGE:
 ${activeSections.join('\n')}
 
 SERVICIOS COMPLEMENTARIOS INCLUIDOS:
-• Correos Corporativos cifrados @${urlPreview.textContent}
+• Correos Corporativos cifrados @${domain}
 • Certificado de Seguridad SSL (https://)
 • Optimización móvil para supervisores y jefaturas en faena
 • Botón de WhatsApp directo para cotizaciones urgentes
+• Barra lateral retráctil de redes sociales (LinkedIn, Instagram, Facebook, X)
 
 ------------------------------------------------------
 Desarrollado y Acreditado por AppMinera.cl
@@ -4082,9 +4370,521 @@ Soluciones Digitales para Contratistas & Proveedores Mineros`;
         return text;
       }
 
-      // 6. Modal open & close
+      // B) Prompt Maestro para Inteligencia Artificial (ChatGPT, Claude, DeepSeek, Gemini)
+      function generatePromptText() {
+        const companyName = clientDemoInput.value.trim() || 'Empresa Minera Cliente';
+        const cleanSlug = companyName.toLowerCase()
+          .replace(/\b(spa|s\.p\.a|ltda|limitada|sa|s\.a|eirl)\b/gi, '')
+          .replace(/[^a-z0-9]/g, '')
+          .slice(0, 16) || 'tuempresa';
+        const domain = cleanSlug + '.cl';
+
+        const activeSections = [];
+        checkboxes.forEach(cb => {
+          if (cb.checked) {
+            const key = cb.dataset.section;
+            if (sectionInfo[key]) {
+              const aType = sectionAnimations[key] || 'basic';
+              const aName = (aType === 'none') ? 'Sin Animación' : (aType === 'advanced' ? 'Animación Avanzada' : 'Animación Básica');
+              activeSections.push(`- **${sectionInfo[key].name}** [${aName}]: ${sectionInfo[key].desc}`);
+            }
+          }
+        });
+
+        const animGlobal = document.querySelector('.anim-global-btn.active')?.textContent.trim() || 'Básicas';
+
+        return `# PROMPT MAESTRO: LANDING PAGE B2B MINERA (${companyName.toUpperCase()})
+
+Actúa como un Diseñador Web Senior y Desarrollador Frontend experto en la industria minera, energética e industrial en Chile (mercado B2B y faenas mineras).
+Tu tarea es implementar, adaptar o redactar el contenido comercial completo para la Landing Page corporativa de la siguiente empresa:
+
+## 1. INFORMACIÓN DE LA EMPRESA & MARCA
+- Nombre Comercial: "${companyName}"
+- Dominio Web: https://${domain}
+- Mercado Objetivo: Proveedores y Contratistas Mineros en Chile (SICEP, REGIC, Minera Escondida, Codelco, Collahuasi, Centinela, Pelambres).
+- Tono de Comunicación: Técnico, sobrio, formal, de alta seguridad HSEC y orientado a licitaciones y contratos marco.
+
+## 2. CONFIGURACIÓN VISUAL & PALETA DE COLORES
+- Paleta Corporativa Seleccionada: ${currentTheme.name}
+  * Color Primario Institucional: ${currentTheme.primary}
+  * Color Medio / Gradientes: ${currentTheme.medium}
+  * Color de Fondo / Secciones Oscuras: ${currentTheme.dark}
+  * Color de Acento / Botones de Cotización: ${currentTheme.accent}
+- Modo de Apariencia: ${currentMode === 'dark' ? 'Modo Oscuro (High Contrast / Dark Theme Industrial)' : 'Modo Claro (Clean Corporate B2B)'}
+- Nivel Global de Animación: ${animGlobal}
+
+## 3. SECCIONES Y MÓDULOS REQUERIDOS (${activeSections.length} de ${checkboxes.length} Activos):
+${activeSections.join('\n')}
+
+## 4. CANALES DE CONTACTO & CONVERSIÓN
+- Botón de WhatsApp flotante para comunicación directa con supervisores y gerentes de faena.
+- Barra lateral de Redes Sociales (LinkedIn corporativo, Instagram, Facebook y perfil X).
+- Formulario de cotización con selector de faena (Antofagasta, Calama, Copiapó, Tarapacá, Coquimbo, Santiago).
+- Casillas corporativas oficiales cifradas @${domain}.
+
+## 5. INSTRUCCIONES DE DESARROLLO & COPYWRITING
+- Genera titulares directos de alto impacto enfocados en confiabilidad operativa, cero incidentes y cumplimiento contractual.
+- Asegura que el código sea 100% responsivo para smartphones (usado ampliamente por personal de faena) y pantallas de escritorio.
+- Todo el código debe estar bien estructurado, semántico (HTML5, CSS moderno) y optimizado para velocidad de carga en zonas remotas.`;
+      }
+
+      // C) Generador de Archivo HTML Completo y Autónomo (Standalone)
+      function generateStandaloneLandingHTML() {
+        const companyName = clientDemoInput.value.trim() || 'Servicios Mineros';
+        const cleanSlug = companyName.toLowerCase()
+          .replace(/\b(spa|s\.p\.a|ltda|limitada|sa|s\.a|eirl)\b/gi, '')
+          .replace(/[^a-z0-9]/g, '')
+          .slice(0, 16) || 'tuempresa';
+        const domain = cleanSlug + '.cl';
+        const isDark = currentMode === 'dark';
+
+        // Clonar las secciones simuladas
+        const landingClone = landingContent.cloneNode(true);
+
+        // Remover secciones no seleccionadas
+        landingClone.querySelectorAll('.sim-section.is-hidden').forEach(el => el.remove());
+
+        // Remover etiquetas internas del configurador ("Módulo: ...")
+        landingClone.querySelectorAll('.section-tag-indicator').forEach(el => el.remove());
+
+        // Limpiar posicionamiento inline en WhatsApp y Redes para que usen las reglas CSS de pantalla completa
+        landingClone.querySelectorAll('#preview-whatsapp, #preview-social').forEach(el => {
+          el.removeAttribute('style');
+        });
+
+        const bodyHTML = landingClone.innerHTML;
+
+        const htmlOutput = `<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${companyName} | Soluciones para la Gran Minería</title>
+  <meta name="description" content="Sitio web corporativo de ${companyName}. Servicios especializados para la gran minería e industria en Chile. Cobertura en faena y cumplimiento HSEC.">
+  <meta name="keywords" content="${companyName}, servicios mineros, proveedores mineria chile, contratistas faena, SICEP, HSEC">
+  
+  <!-- Tipografía Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --lp-primary: ${currentTheme.primary};
+      --lp-medium: ${currentTheme.medium};
+      --lp-dark: ${currentTheme.dark};
+      --lp-accent: ${currentTheme.accent};
+      --lp-accent-dark: ${currentTheme.accentDark};
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: ${isDark ? '#060b14' : '#ffffff'};
+      color: ${isDark ? '#f1f5f9' : '#1e293b'};
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    /* Contenedor Principal */
+    .live-landing-content {
+      width: 100%;
+      min-height: 100vh;
+      position: relative;
+      background: ${isDark ? '#060b14' : '#ffffff'};
+    }
+
+    /* 1. TOPBAR FAENA */
+    .sim-topbar {
+      background: var(--lp-dark);
+      color: #cbd5e1;
+      padding: 8px 32px;
+      font-size: 0.74rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .sim-topbar .left-info { display: flex; align-items: center; gap: 8px; }
+    .sim-topbar .badge-chile { background: rgba(255,255,255,0.12); padding: 2px 7px; border-radius: 4px; font-weight: 600; color: #fff; }
+    .sim-topbar .right-info { display: flex; gap: 16px; }
+    .sim-topbar .right-info a { color: #cbd5e1; text-decoration: none; }
+
+    /* 2. NAVBAR */
+    .sim-navbar {
+      background: ${isDark ? '#09121f' : '#ffffff'};
+      padding: 14px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid ${isDark ? 'rgba(255,255,255,0.08)' : '#e2e8f0'};
+      position: sticky;
+      top: 0;
+      z-index: 90;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    .sim-navbar .sim-logo { display: flex; align-items: center; gap: 10px; }
+    .sim-navbar .sim-logo-icon { width: 34px; height: 34px; background: var(--lp-primary); color: #fff; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
+    .sim-navbar .sim-logo-text { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.05rem; color: ${isDark ? '#ffffff' : '#07172c'}; }
+    .sim-nav-menu { display: flex; gap: 24px; list-style: none; }
+    .sim-nav-menu li a { color: ${isDark ? '#cbd5e1' : '#334155'}; text-decoration: none; font-size: 0.86rem; font-weight: 600; transition: color 0.2s; }
+    .sim-nav-menu li a:hover { color: var(--lp-accent); }
+    .sim-nav-cta { background: var(--lp-primary); color: #fff; padding: 8px 18px; border-radius: 6px; text-decoration: none; font-size: 0.84rem; font-weight: 700; }
+    .sim-mobile-burger { display: none; font-size: 1.3rem; cursor: pointer; color: ${isDark ? '#ffffff' : '#07172c'}; }
+
+    /* 3. HERO */
+    .sim-hero {
+      background: linear-gradient(135deg, var(--lp-dark) 0%, var(--lp-primary) 65%, var(--lp-medium) 100%);
+      color: #ffffff;
+      padding: 70px 36px 60px 36px;
+      position: relative;
+    }
+    .sim-hero-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); padding: 4px 12px; border-radius: 20px; font-size: 0.76rem; font-weight: 600; color: #fbbf24; margin-bottom: 16px; }
+    .sim-hero h2 { font-family: 'Outfit', sans-serif; font-size: 2.3rem; font-weight: 800; line-height: 1.18; margin-bottom: 14px; max-width: 720px; }
+    .sim-hero h2 span { color: var(--lp-accent); }
+    .sim-hero p { font-size: 1rem; color: #cbd5e1; max-width: 650px; line-height: 1.5; margin-bottom: 26px; }
+    .sim-hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 34px; }
+    .sim-btn-hero-primary { background: linear-gradient(135deg, var(--lp-accent), var(--lp-accent-dark)); color: #fff; padding: 12px 24px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 0.92rem; box-shadow: 0 4px 14px rgba(0,0,0,0.3); }
+    .sim-btn-hero-secondary { background: rgba(255,255,255,0.08); color: #fff; border: 1px solid rgba(255,255,255,0.25); padding: 12px 22px; border-radius: 6px; font-weight: 600; text-decoration: none; font-size: 0.92rem; }
+    .sim-hero-metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 16px; border-top: 1px solid rgba(255,255,255,0.12); padding-top: 24px; }
+    .metric-box strong { font-family: 'Outfit', sans-serif; font-size: 1.5rem; color: var(--lp-accent); display: block; }
+    .metric-box span { font-size: 0.74rem; color: #cbd5e1; }
+
+    /* SECTIONS GENERIC */
+    .sim-section { padding: 55px 36px; border-bottom: 1px solid ${isDark ? 'rgba(255,255,255,0.08)' : '#f1f5f9'}; }
+    .sim-section-header { text-align: center; max-width: 680px; margin: 0 auto 34px auto; }
+    .sim-section-header h3 { font-family: 'Outfit', sans-serif; font-size: 1.6rem; font-weight: 700; color: ${isDark ? '#ffffff' : '#07172c'}; margin-bottom: 8px; }
+    .sim-section-header p { font-size: 0.88rem; color: ${isDark ? '#94a3b8' : '#64748b'}; line-height: 1.45; }
+
+    /* 4. COMPARISON */
+    .comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 900px; margin: 0 auto; }
+    .card-problem { background: ${isDark ? 'rgba(185,28,28,0.14)' : '#fef2f2'}; border: 1px solid ${isDark ? 'rgba(239,68,68,0.3)' : '#fecaca'}; border-radius: 10px; padding: 22px; }
+    .card-solution { background: ${isDark ? 'rgba(16,185,129,0.14)' : '#f0fdf4'}; border: 1px solid ${isDark ? 'rgba(52,211,153,0.3)' : '#bbf7d0'}; border-radius: 10px; padding: 22px; }
+    .card-problem h4 { color: #dc2626; font-size: 1.05rem; margin-bottom: 12px; }
+    .card-solution h4 { color: #16a34a; font-size: 1.05rem; margin-bottom: 12px; }
+    .card-problem ul, .card-solution ul { list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 0.82rem; }
+
+    /* 5. SERVICES */
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; max-width: 1060px; margin: 0 auto; }
+    .sim-service-card { background: ${isDark ? '#0d1728' : '#ffffff'}; border: 1px solid ${isDark ? 'rgba(255,255,255,0.08)' : '#e2e8f0'}; border-radius: 10px; padding: 22px; box-shadow: 0 4px 14px rgba(0,0,0,0.05); }
+    .sim-card-badge { display: inline-block; background: var(--lp-primary); color: #fff; font-size: 0.68rem; font-weight: 700; padding: 2px 7px; border-radius: 4px; margin-bottom: 10px; }
+    .sim-service-card h4 { font-size: 1.05rem; color: ${isDark ? '#ffffff' : '#07172c'}; margin-bottom: 8px; }
+    .sim-service-card p { font-size: 0.8rem; color: ${isDark ? '#94a3b8' : '#64748b'}; margin-bottom: 12px; }
+    .service-bullets { list-style: none; font-size: 0.76rem; display: flex; flex-direction: column; gap: 5px; color: ${isDark ? '#cbd5e1' : '#475569'}; }
+
+    /* 6. STANDARDS */
+    .standards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; max-width: 900px; margin: 0 auto; }
+    .standard-item { background: ${isDark ? '#0d1728' : '#f8fafc'}; border: 1px solid ${isDark ? 'rgba(255,255,255,0.08)' : '#e2e8f0'}; border-radius: 8px; padding: 16px; text-align: center; }
+    .standard-item .cert-badge { font-size: 1.5rem; margin-bottom: 6px; }
+    .standard-item h5 { font-size: 0.9rem; color: ${isDark ? '#ffffff' : '#07172c'}; margin-bottom: 4px; }
+    .standard-item span { font-size: 0.72rem; color: ${isDark ? '#94a3b8' : '#64748b'}; }
+
+    /* 7. PROCESS */
+    .process-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; max-width: 1000px; margin: 0 auto; }
+    .step-card { background: ${isDark ? '#0d1728' : '#ffffff'}; border: 1px solid ${isDark ? 'rgba(255,255,255,0.08)' : '#e2e8f0'}; border-radius: 8px; padding: 20px; position: relative; }
+    .step-num { font-family: 'Outfit', sans-serif; font-size: 1.8rem; font-weight: 800; color: var(--lp-accent); margin-bottom: 8px; }
+    .step-card h5 { font-size: 0.95rem; color: ${isDark ? '#ffffff' : '#07172c'}; margin-bottom: 6px; }
+    .step-card p { font-size: 0.78rem; color: ${isDark ? '#94a3b8' : '#64748b'}; }
+
+    /* 8. DEMOS / PORTFOLIO */
+    .demos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; max-width: 1000px; margin: 0 auto; }
+    .demo-card { background: ${isDark ? '#0d1728' : '#ffffff'}; border: 1px solid ${isDark ? 'rgba(255,255,255,0.08)' : '#e2e8f0'}; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+    .demo-img-box { height: 130px; background: linear-gradient(135deg, var(--lp-primary), var(--lp-dark)); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 2.5rem; position: relative; }
+    .demo-badge { position: absolute; bottom: 8px; right: 8px; background: rgba(0,0,0,0.6); color: #fbbf24; font-size: 0.65rem; font-weight: 700; padding: 2px 7px; border-radius: 4px; }
+    .demo-info { padding: 16px; }
+    .demo-info h5 { font-size: 0.95rem; color: ${isDark ? '#ffffff' : '#07172c'}; margin-bottom: 4px; }
+    .demo-info p { font-size: 0.76rem; color: ${isDark ? '#94a3b8' : '#64748b'}; }
+
+    /* 9. PRICING */
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; max-width: 960px; margin: 0 auto; }
+    .price-card { background: ${isDark ? '#0d1728' : '#ffffff'}; border: 1px solid ${isDark ? 'rgba(255,255,255,0.08)' : '#e2e8f0'}; border-radius: 10px; padding: 24px; position: relative; }
+    .price-card.card-popular { border-color: var(--lp-accent); box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
+    .badge-popular { position: absolute; top: -11px; left: 50%; transform: translateX(-50%); background: var(--lp-accent); color: #07172c; font-size: 0.68rem; font-weight: 800; padding: 2px 10px; border-radius: 12px; }
+    .price-card h4 { font-size: 1.05rem; color: ${isDark ? '#ffffff' : '#07172c'}; margin-bottom: 6px; }
+    .price-val { font-size: 1.5rem; font-weight: 800; color: var(--lp-primary); margin-bottom: 14px; }
+    .price-card.card-popular .price-val { color: var(--lp-accent); }
+    .price-features { list-style: none; font-size: 0.78rem; display: flex; flex-direction: column; gap: 7px; margin-bottom: 20px; color: ${isDark ? '#cbd5e1' : '#475569'}; }
+    .price-btn { display: block; text-align: center; background: var(--lp-primary); color: #fff; padding: 9px; border-radius: 6px; text-decoration: none; font-size: 0.82rem; font-weight: 700; }
+    .price-card.card-popular .price-btn { background: var(--lp-accent); color: #07172c; }
+
+    /* 10. TESTIMONIALS */
+    .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; max-width: 960px; margin: 0 auto; }
+    .testi-card { background: ${isDark ? '#0d1728' : '#ffffff'}; border: 1px solid ${isDark ? 'rgba(255,255,255,0.08)' : '#e2e8f0'}; border-radius: 8px; padding: 20px; }
+    .testi-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+    .testi-avatar { width: 36px; height: 36px; background: var(--lp-primary); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem; }
+    .testi-author h5 { font-size: 0.85rem; color: ${isDark ? '#ffffff' : '#07172c'}; }
+    .testi-author span { font-size: 0.7rem; color: ${isDark ? '#94a3b8' : '#64748b'}; }
+    .testi-card p { font-size: 0.8rem; color: ${isDark ? '#cbd5e1' : '#475569'}; font-style: italic; line-height: 1.45; }
+    .testi-stars { color: #f59e0b; font-size: 0.75rem; margin-top: 8px; }
+
+    /* 11. FAQ */
+    .faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 10px; }
+    .faq-item { background: ${isDark ? '#0d1728' : '#ffffff'}; border: 1px solid ${isDark ? 'rgba(255,255,255,0.08)' : '#e2e8f0'}; border-radius: 6px; padding: 14px 18px; }
+    .faq-item summary { font-size: 0.88rem; font-weight: 600; color: ${isDark ? '#ffffff' : '#07172c'}; cursor: pointer; outline: none; }
+    .faq-item p { margin-top: 10px; font-size: 0.8rem; color: ${isDark ? '#94a3b8' : '#64748b'}; line-height: 1.45; }
+
+    /* 12. CONTACT */
+    .contact-box { max-width: 580px; margin: 0 auto; background: ${isDark ? '#0d1728' : '#ffffff'}; border: 1px solid ${isDark ? 'rgba(255,255,255,0.08)' : '#e2e8f0'}; border-radius: 10px; padding: 28px; box-shadow: 0 4px 18px rgba(0,0,0,0.06); }
+    .contact-form { display: flex; flex-direction: column; gap: 14px; }
+    .form-group-sim { display: flex; flex-direction: column; gap: 5px; }
+    .form-group-sim label { font-size: 0.76rem; font-weight: 600; color: ${isDark ? '#cbd5e1' : '#475569'}; }
+    .form-group-sim input, .form-group-sim select { padding: 9px 12px; border: 1px solid ${isDark ? 'rgba(255,255,255,0.15)' : '#cbd5e1'}; background: ${isDark ? '#080e18' : '#ffffff'}; color: ${isDark ? '#ffffff' : '#1e293b'}; border-radius: 6px; font-size: 0.82rem; }
+    .btn-submit-sim { background: linear-gradient(135deg, var(--lp-primary), var(--lp-medium)); color: #fff; padding: 12px; border: none; border-radius: 6px; font-weight: 700; font-size: 0.88rem; cursor: pointer; }
+
+    /* 13. WHATSAPP FLOTANTE STANDALONE */
+    .sim-wa-floating {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #25d366;
+      color: #ffffff;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+      z-index: 999;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .sim-wa-floating:hover { transform: scale(1.1); box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6); }
+    .sim-wa-floating svg { width: 30px; height: 30px; fill: #ffffff; }
+    .sim-wa-floating::before {
+      content: '';
+      position: absolute;
+      top: -4px; left: -4px; right: -4px; bottom: -4px;
+      border-radius: 50%;
+      border: 2px solid #25d366;
+      animation: waPulseRing 2.4s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+      pointer-events: none;
+    }
+    @keyframes waPulseRing {
+      0% { transform: scale(0.95); opacity: 0.8; }
+      50% { transform: scale(1.25); opacity: 0; }
+      100% { transform: scale(1.25); opacity: 0; }
+    }
+
+    /* 14. BARRA REDES SOCIALES LATERAL STANDALONE */
+    .sim-social-sidebar {
+      position: fixed;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      z-index: 998;
+      display: flex;
+      align-items: center;
+    }
+    .sim-social-tab {
+      width: 22px;
+      height: 46px;
+      background: #0f172a;
+      color: #cbd5e1;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-right: none;
+      border-radius: 6px 0 0 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .sim-social-buttons {
+      display: flex;
+      flex-direction: column;
+      width: 40px;
+      max-width: 40px;
+      border-radius: 6px 0 0 6px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    .sim-social-sidebar.is-collapsed .sim-social-buttons {
+      max-width: 0;
+      opacity: 0;
+      transform: scaleX(0);
+      pointer-events: none;
+    }
+    .sim-social-sidebar.is-collapsed .sim-tab-arrow { transform: rotate(180deg); }
+    .sim-social-square-btn {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      text-decoration: none;
+    }
+    .sim-social-square-btn svg { width: 20px; height: 20px; fill: currentColor; }
+    .btn-social-instagram { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
+    .btn-social-facebook { background: #1877f2; }
+    .btn-social-x { background: #000000; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .btn-social-linkedin { background: #0a66c2; }
+
+    /* 15. FOOTER */
+    .sim-footer { background: var(--lp-dark); color: #94a3b8; padding: 26px 32px; font-size: 0.74rem; border-top: 1px solid rgba(255,255,255,0.06); }
+    .footer-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .footer-links { display: flex; gap: 14px; }
+    .footer-links a { color: #94a3b8; text-decoration: none; }
+
+    /* ANIMACIONES */
+    .sim-section.anim-basic { animation: simBasicFadeUp 0.65s cubic-bezier(0.16, 1, 0.3, 1) both; }
+    @keyframes simBasicFadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+    .sim-section.anim-advanced { animation: simAdvancedPop 0.8s cubic-bezier(0.22, 1, 0.36, 1) both; }
+    @keyframes simAdvancedPop { 0% { opacity: 0; transform: translateY(28px) scale(0.975); } 100% { opacity: 1; transform: translateY(0) scale(1); } }
+    .sim-section.anim-advanced .sim-service-card, .sim-section.anim-advanced .price-card, .sim-section.anim-advanced .step-card { animation: simChildStagger 0.65s both; }
+    @keyframes simChildStagger { 0% { opacity: 0; transform: translateY(22px); } 100% { opacity: 1; transform: translateY(0); } }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .sim-topbar { flex-direction: column; text-align: center; gap: 6px; padding: 10px 16px; }
+      .sim-topbar .right-info { flex-wrap: wrap; justify-content: center; }
+      .sim-navbar { padding: 12px 18px; }
+      .sim-nav-menu { display: none; }
+      .sim-mobile-burger { display: block; }
+      .sim-hero { padding: 50px 20px 40px 20px; }
+      .sim-hero h2 { font-size: 1.8rem; }
+      .sim-section { padding: 40px 18px; }
+      .comparison-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body class="${isDark ? 'theme-dark' : ''}">
+
+  <div class="live-landing-content ${isDark ? 'theme-dark' : ''}">
+${bodyHTML}
+  </div>
+
+  <script>
+    // Pestaña retráctil de redes sociales lateral
+    const simSocialTab = document.getElementById('simSocialTab');
+    const previewSocial = document.getElementById('preview-social');
+    if (simSocialTab && previewSocial) {
+      simSocialTab.addEventListener('click', (e) => {
+        e.stopPropagation();
+        previewSocial.classList.toggle('is-collapsed');
+      });
+    }
+
+    // Scroll suave a cotizar
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href && href.startsWith('#') && href.length > 1) {
+          const target = document.querySelector(href);
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      });
+    });
+  <\/script>
+</body>
+</html>`;
+
+        return htmlOutput;
+      }
+
+      // Función para descargar el archivo HTML generado
+      function downloadLandingHTML() {
+        const companyName = clientDemoInput.value.trim() || 'Servicios Mineros';
+        const cleanSlug = companyName.toLowerCase()
+          .replace(/\b(spa|s\.p\.a|ltda|limitada|sa|s\.a|eirl)\b/gi, '')
+          .replace(/[^a-z0-9]/g, '')
+          .slice(0, 16) || 'tuempresa';
+        const fileName = `landing-${cleanSlug}.html`;
+        const content = generateStandaloneLandingHTML();
+
+        const blob = new Blob([content], { type: 'text/html;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = fileName;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      }
+
+      // 6. Navegación de Pestañas del Modal de Exportación
+      const modalTabs = document.querySelectorAll('.modal-tab-btn');
+      const tabContents = {
+        'description': document.getElementById('tabContentDescription'),
+        'prompt': document.getElementById('tabContentPrompt'),
+        'html': document.getElementById('tabContentHtml')
+      };
+
+      modalTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          modalTabs.forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+
+          const target = tab.dataset.tab;
+          Object.values(tabContents).forEach(content => {
+            if (content) content.classList.remove('active');
+          });
+          if (tabContents[target]) {
+            tabContents[target].classList.add('active');
+          }
+        });
+      });
+
+      // Elementos del Modal
+      const promptTextOutput = document.getElementById('promptTextOutput');
+      const copyPromptBtn = document.getElementById('copyPromptBtn');
+      const htmlCodePreview = document.getElementById('htmlCodePreview');
+      const downloadHtmlBtn = document.getElementById('downloadHtmlBtn');
+      const copyHtmlCodeBtn = document.getElementById('copyHtmlCodeBtn');
+      const downloadFileNameTitle = document.getElementById('downloadFileNameTitle');
+      const downloadModeText = document.getElementById('downloadModeText');
+      const htmlActiveCount = document.getElementById('htmlActiveCount');
+      const htmlThemeName = document.getElementById('htmlThemeName');
+
+      // Apertura del Modal y carga de los 3 formatos
       openSummaryBtn.addEventListener('click', () => {
+        const companyName = clientDemoInput.value.trim() || 'Servicios Mineros';
+        const cleanSlug = companyName.toLowerCase()
+          .replace(/\b(spa|s\.p\.a|ltda|limitada|sa|s\.a|eirl)\b/gi, '')
+          .replace(/[^a-z0-9]/g, '')
+          .slice(0, 16) || 'tuempresa';
+        const activeCount = Array.from(checkboxes).filter(cb => cb.checked).length;
+
+        // 1. Cargar Descripción Actual
         summaryTextOutput.textContent = generateProposalText();
+
+        // 2. Cargar Prompt para IA
+        if (promptTextOutput) {
+          promptTextOutput.textContent = generatePromptText();
+        }
+
+        // 3. Generar HTML y precargar vista previa y metadatos
+        const htmlCode = generateStandaloneLandingHTML();
+        if (htmlCodePreview) {
+          htmlCodePreview.textContent = htmlCode;
+        }
+        if (downloadFileNameTitle) {
+          downloadFileNameTitle.textContent = `landing-${cleanSlug}.html`;
+        }
+        if (downloadModeText) {
+          downloadModeText.textContent = currentMode === 'dark' ? 'Oscuro' : 'Claro';
+        }
+        if (htmlActiveCount) {
+          htmlActiveCount.textContent = activeCount;
+        }
+        if (htmlThemeName) {
+          htmlThemeName.textContent = currentTheme.name;
+        }
+
         summaryModal.classList.add('open');
       });
 
@@ -4098,25 +4898,63 @@ Soluciones Digitales para Contratistas & Proveedores Mineros`;
         }
       });
 
-      // Copy text to clipboard
+      // Botón: Copiar Propuesta Comercial
       copyTextBtn.addEventListener('click', async () => {
         try {
           await navigator.clipboard.writeText(summaryTextOutput.textContent);
-          copyTextBtn.textContent = '✅ ¡Copiado con Éxito!';
+          copyTextBtn.textContent = '✅ ¡Propuesta Copiada!';
           setTimeout(() => {
-            copyTextBtn.textContent = '📄 Copiar Texto';
+            copyTextBtn.textContent = '📄 Copiar Propuesta';
           }, 2000);
         } catch (err) {
           alert('Selecciona y copia el texto manualmente.');
         }
       });
 
-      // Send via WhatsApp
+      // Botón: Enviar Propuesta por WhatsApp
       sendWhatsAppBtn.addEventListener('click', () => {
         const text = encodeURIComponent(summaryTextOutput.textContent);
         const url = `https://wa.me/?text=${text}`;
         window.open(url, '_blank');
       });
+
+      // Botón: Copiar Prompt IA
+      if (copyPromptBtn) {
+        copyPromptBtn.addEventListener('click', async () => {
+          try {
+            await navigator.clipboard.writeText(promptTextOutput.textContent);
+            copyPromptBtn.textContent = '✅ ¡Prompt Copiado!';
+            setTimeout(() => {
+              copyPromptBtn.textContent = '🤖 Copiar Prompt para IA';
+            }, 2000);
+          } catch (err) {
+            alert('Selecciona y copia el texto del prompt.');
+          }
+        });
+      }
+
+      // Botón: Descargar Archivo HTML (.html)
+      if (downloadHtmlBtn) {
+        downloadHtmlBtn.addEventListener('click', () => {
+          downloadLandingHTML();
+        });
+      }
+
+      // Botón: Copiar Código HTML al Portapapeles
+      if (copyHtmlCodeBtn) {
+        copyHtmlCodeBtn.addEventListener('click', async () => {
+          try {
+            const code = generateStandaloneLandingHTML();
+            await navigator.clipboard.writeText(code);
+            copyHtmlCodeBtn.textContent = '✅ ¡HTML Copiado!';
+            setTimeout(() => {
+              copyHtmlCodeBtn.innerHTML = '<span>📋</span> Copiar Código HTML';
+            }, 2000);
+          } catch (err) {
+            alert('Selecciona y copia el código HTML.');
+          }
+        });
+      }
 
       // Floating Elements: Social Sidebar & WhatsApp Button
       const socialSidebar = document.getElementById('preview-social');
